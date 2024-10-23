@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+}
+
+.index_first_banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;;
+    background: url("../images/indexPage/hell_cat.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
