@@ -6,10 +6,42 @@ targetElement = document.getElementById(elementID);
 targetElement.scrollIntoView();
 }
 
+function modalSetTitle(title) {
+  $("#main-modal-title").text(title);
+}
+
+function modalSetBody(body) {
+  $("#main-modal-body").text(body);
+}
+
+function modalSetPrimaryBtn(Show=true,text="Confirm",action=null) {
+  if (Show) {
+    $("#main-modal-primary").text(text);
+    $("#main-modal-primary").click(action);
+    $("#main-modal-primary").show();
+  }
+  else {
+    $("#main-modal-primary").hide();
+  }
+}
+
+function modalSetSecondaryBtn(Show=true,text="Cancel",action=null) {
+  if (Show) {
+    $("#main-modal-secondary").text(text);
+    $("#main-modal-secondary").click(action);
+    $("#main-modal-secondary").show();
+  }
+  else {
+    $("#main-modal-secondary").hide();
+  }
+}
 
 // page top
 document.addEventListener("DOMContentLoaded", function () {
     topBtn = document.querySelector("#page-top");
+    if (topBtn === null) {
+        return;
+    }
     topBtn.style.display = "none";
 
     window.addEventListener("scroll", function () {

@@ -25,15 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   btnLogin.addEventListener('click', function (e) {
-    console.log("click");
-    //e.preventDefault();
-    account = $("#account").val(accountInput.value);
-    password = $("#password").val(passwordInput.value);
+    e.preventDefault();
+    account = $("#account").val();
+    password = $("#password").val();
     if (account === '' || password === '') {
-      $("#main-modal-primary").hide();
-      $("#main-modal-title").text("login failed");
-      $("#main-modal-body").text('Please fill in all fields');
-      $("#main-modal").show();
+      modalSetPrimaryBtn(Show = false)
+      modalSetTitle("login failed");
+      modalSetBody("Please fill in all fields");
       return;
     }
     if (password === "Ab12345678") {
@@ -46,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
       else if (account === "I") {
         window.location.href = "./insurance/index.html";
       }
+      return
     }
-    else {
-      $("#main-modal-primary").hide();
-      $("#main-modal-title").text("login failed");
-      $("#main-modal-body").text('Incorrect username or password');
-      $("#main-modal").show();
-    }
+
+    modalSetPrimaryBtn(Show = false)
+    modalSetTitle("login failed");
+    modalSetBody("Incorrect account or password");
+
   });
 })
