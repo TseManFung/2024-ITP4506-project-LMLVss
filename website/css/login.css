@@ -38,7 +38,7 @@ body::after{
     right: -15vh;
 }
 
-.container{
+.card-container{
     position: relative;
     z-index: 1;
     width: 500px;
@@ -90,7 +90,7 @@ h1{
     cursor: pointer;
 }
 
-.btn-login{
+.btn-login , .btn-next ,.btn-sign-up{
     width: 75%;
     height: 50px;
     margin-top: 30px;
@@ -130,7 +130,7 @@ body.show-password::before,
 body.show-password::after{
     display: none;
 }
-.show-password .container{
+.show-password .card-container{
     background-color: rgba(255,255,255,0.05);
     box-shadow: 0 8px 50px rgba(255,255,255,0.25);
     border: 1px solid rgba(255,255,255,0.15);
