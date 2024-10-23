@@ -19,8 +19,8 @@
 
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="../js/common.js"></script>
-  <script src="../js/login.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/login.js"></script>
     <!-- /js -->
 </head>
 
@@ -48,7 +48,33 @@
                 </div>
                 <button class="btn btn-primary" id="btn-next" type="button">Next</button>
             </div>
-            <div class="move-card"></div>
+            <div class="move-card">
+                <p>What is your personal information?</p>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                    <label for="FirstName">First Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                    <label for="LastName">Last Name</label>
+                </div>
+            </div>
+            <div class="move-card">
+                <p>Please input your account information.</p>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="LoginName" placeholder="LoginName">
+                    <label for="LoginName">Login Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="Password" placeholder="Password">
+                    <label for="Password">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="ConfirmPassword" placeholder="ConfirmPassword">
+                    <label for="ConfirmPassword">Confirm Password</label>
+                </div>
+                <button class="btn-sign-up">Sign up</button>
+            </div>
             <!--     <div class="ipt-box">
       <input type="text" id="account" name = "LoginName" placeholder="account" autocomplete="off">
     </div>
@@ -57,7 +83,7 @@
       <i class="fa-regular fa-eye-slash" style></i>
       <div class="beam"></div>
     </div> -->
-            <button class="btn-sign-up">Sign up</button>
+
 
         </div>
     </form>
