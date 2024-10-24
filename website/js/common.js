@@ -11,7 +11,14 @@ function modalSetTitle(title) {
 }
 
 function modalSetBody(body) {
-  $("#main-modal-body").text(body);
+  $("#main-modal-body").html(body);
+}
+function showModal() {
+  $("#main-modal").modal("show");
+}
+
+function hideModal() {
+  $("#main-modal").modal("hide");
 }
 
 function modalSetPrimaryBtn(Show=true,text="Confirm",action=null) {
