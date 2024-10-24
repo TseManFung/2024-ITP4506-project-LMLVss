@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#card-" + current).addClass("d-none");
       $("#card-" + next).removeClass("d-none");
     });
-    function checkInput(current, finish, next) {
+    function checkInput(current) {
       inputs = document.querySelectorAll("#card-" + current + " .ipt-box");
       let valid = true;
       inputs = Array.from(inputs).filter(
@@ -102,10 +102,39 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       if (!valid) {
         modalSetPrimaryBtn((Show = false));
-        modalSetTitle("login failed");
+        modalSetTitle("information incomplete");
         modalSetBody("Please fill in all fields");
         showModal();
         return false;
+      }
+      return true;
+    }
+
+    function correlationProcess(current, finish) {
+      if (current == 0) {
+        const selectedIdentity = $("[name='identity']:checked").val();
+        if (selectedIdentity !== "customer") {
+          $("#staffNumberDiv").removeClass("d-none");
+          $("#companyDiv").removeClass("d-none");
+        } else {
+          $("#staffNumberDiv").addClass("d-none");
+          $("#companyDiv").addClass("d-none");
+        }
+        if (selectedIdentity == "insurance") {
+          $("#accountDiv").removeClass("d-none");
+        } else {
+          $("#accountDiv").addClass("d-none");
+        }
+      } else if (current == finish) {
+        const password = $("#password").val();
+        const confirmPassword = $("#confirmPassword").val();
+        if (password !== confirmPassword) {
+          modalSetPrimaryBtn((Show = false));
+          modalSetTitle("sign up failed");
+          modalSetBody("Password and Confirm Password are not the same");
+          showModal();
+          return false;
+        }
       }
       return true;
     }
@@ -115,14 +144,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const current = this.getAttribute("curr");
       const finish = this.getAttribute("fin");
       const next = parseInt(current, 10) + 1;
+      if (!checkInput(current)) {
+        return;
+      }
 
-      if (next > finish) {
-        window.location.href = "./login.html";
+      if (correlationProcess(current, finish)) {
+        if (next > finish) {
+          window.location.href = "./login.html";
+        }
         return;
       }
-      if (!checkInput(current, finish, next)) {
-        return;
-      }
+
       $("#card-" + current).addClass("d-none");
       $("#card-" + next).removeClass("d-none");
       this.setAttribute("curr", next);

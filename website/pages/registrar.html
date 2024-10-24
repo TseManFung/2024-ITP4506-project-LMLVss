@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="identity" id="rdo-insurance"
-                               value="Insurance">
+                               value="insurance">
                         <label class="form-check-label" for="rdo-insurance">Insurance sales</label>
                     </div>
                 </div>
@@ -68,14 +68,18 @@
                     <input type="tel" class="form-control" id="tel" placeholder="Phone number">
                     <label for="tel">Phone number</label>
                 </div>
-                <div class="ipt-box form-floating d-none">
+                <div class="ipt-box form-floating d-none" id="companyDiv">
+                    <input type="text" class="form-control" id="company" placeholder="Company">
+                    <label for="company">Company</label>
+                </div>
+                <div class="ipt-box form-floating d-none" id="staffNumberDiv">
                     <input type="text" class="form-control" id="staffNumber" placeholder="Staff number">
                     <label for="staffNumber">Staff number</label>
                 </div>
             </div>
             <div class="move-card d-none d-flex flex-column justify-content-center align-items-center" id="card-2">
                 <p>Please input your account information.</p>
-                <div class="ipt-box d-none">
+                <div class="ipt-box d-none" id="accountDiv">
                     <input type="text" id="account" name="LoginName" placeholder="account" autocomplete="off">
                 </div>
                 <div class="ipt-box">
@@ -90,6 +94,7 @@
                     <div class="beam" for="confirmPassword"></div>
                 </div>
             </div>
+            <p>if you have a account, please <a href="./registrar.html" class="link-underline-primary link-offset-2">login</a></p>
             <button class="btn-next" id="btn-next" type="button" curr="0" fin="2" fin-text="Sign up">Next</button>
             <!--     <div class="ipt-box">
       <input type="text" id="account" name = "LoginName" placeholder="account" autocomplete="off">

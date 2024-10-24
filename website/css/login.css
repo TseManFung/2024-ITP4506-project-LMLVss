@@ -98,7 +98,6 @@ h1 {
 .btn-sign-up {
   width: 75%;
   height: 50px;
-  margin-top: 30px;
   margin-bottom: 80px;
   border: none;
   outline: none;
@@ -109,6 +108,10 @@ h1 {
   letter-spacing: 8px;
   text-indent: 8px;
   cursor: pointer;
+}
+
+.card-container>p{
+  margin-top: 30px;
 }
 
 .beam {
