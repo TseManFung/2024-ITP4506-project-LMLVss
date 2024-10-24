@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: white !important;
 }
 
 .index_first_banner{
@@ -11,3 +11,7 @@ body{
     background-position: center center;
 }
 
+
+header ul li a .header-mid{
+    justify-content: center !important;
+}

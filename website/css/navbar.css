@@ -21,6 +21,7 @@ header{
     z-index: 1;
     transition: 0.6s;
 }
+
 header .logo{
     font-size: 32px;
     color: #fff;
@@ -55,4 +56,49 @@ header.sticky{
 header.sticky .logo,
 header.sticky ul li a{
     color: #000;
+}
+
+.menu-icon{
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    header .logo {
+        font-size: 24px;
+    }
+
+    header ul {
+        display: none; /* Hide the menu initially */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+
+    header ul li a {
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+/* When the menu is open (toggle) */
+header.active ul {
+    display: flex;
 }
