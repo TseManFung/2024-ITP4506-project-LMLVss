@@ -16,7 +16,7 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
     padding: 40px 100px;
     z-index: 1;
     transition: 0.6s;
@@ -31,10 +31,13 @@ header .logo{
     letter-spacing: 2px;
     transition: 0.6s;
 }
+
 header ul{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center !important;
+    align-items: center !important;
+     /* remove boostrap margin bottom  */
+    margin-bottom: 0px !important;
 }
 header ul li{
     list-style: none;
@@ -65,11 +68,16 @@ header.sticky ul li a{
     display: none;
 }
 
+
+
 /* Media query for responsiveness */
 @media (max-width: 768px) {
+    
     header {
         padding: 20px;
         flex-direction: column;
+
+   
     }
 
     header .logo {
@@ -96,9 +104,19 @@ header.sticky ul li a{
         color: #fff;
         cursor: pointer;
     }
+    ol, ul {
+        padding-left: 0rem  !important; 
+    }
 }
 
 /* When the menu is open (toggle) */
+
+header.active::before{
+    height: 100lvh;
+    background-color: #000;
+}
 header.active ul {
     display: flex;
+
+    
 }
