@@ -1,0 +1,7 @@
+.dialogue {
+    width: 500px;
+    padding: 20px;
+    box-shadow: 0 0 10px #000;
+    background-color: #f4f5f7;
+    border-radius: 20px;
+  }

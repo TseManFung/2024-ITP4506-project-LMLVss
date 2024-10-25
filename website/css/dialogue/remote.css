@@ -1,0 +1,12 @@
+.remote {
+    .text {
+      margin-left: 20px;
+      margin-right: 80px;
+      color: #eee;
+      background-color: #4179f1;
+      &::before {
+        border-right: 10px solid #4179f1;
+        left: -10px;
+      }
+    }
+  }
