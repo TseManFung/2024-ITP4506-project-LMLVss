@@ -2,6 +2,11 @@ body{
     background-color: white !important;
 }
 
+.container{
+        width: 100% !important;
+}
+
+
 .index_first_banner{
     position: relative;
     width: 100%;
@@ -11,9 +16,32 @@ body{
     background-position: center center;
 }
 
-.index_first_banner .p{
-
+.index_first_banner .index_first_banner_text{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
 }
+
+.index_first_banner .index_first_banner_text h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.index_first_banner .index_first_banner_text button{
+    padding: 10px 20px;
+    background-color: white;
+    color: grey;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
 
 header ul li a .header-mid{
     justify-content: center !important;
