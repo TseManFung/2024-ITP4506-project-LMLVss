@@ -168,13 +168,27 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       if (next > finish) {
-        const username = $("#username").val();
-        $("#ConfirmMSG").text(`You have successfully signed up<br>please use ${username} and your password to login<br>Click OK to login`);
+        const selectedIdentity = $("[name='identity']:checked").val();
+        let username = $("#Email").val();
+        t = "Click OK to login"
+        if (selectedIdentity === "insurance") {
+          username = $("#account").val();
+          t = "Please wait for approval"
+        }
+        t = `You have successfully signed up<br>Your account name is '${username}'<br>` + t
         $("#btn-next").hide();
-        setTimeout(function () {
-          window.location.href = "./login.html";
-        }, 3000);
-        
+        modalSetTitle("sign up successful");
+        modalSetBody(t);
+        modalSetSecondaryBtn((Show = false));
+        modelEnableStatic();
+        modalSetCloseBtn((Show = false));
+        modalSetPrimaryBtn((Show = true, text = "OK", action = function () {
+          setTimeout(function () {
+            window.location.href = "./login.html";
+          }, 3000);
+          hideModal();
+        }));
+        showModal();
       }
 
       $("#card-" + current).addClass("d-none");

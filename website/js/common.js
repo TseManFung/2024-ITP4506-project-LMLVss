@@ -21,6 +21,32 @@ function hideModal() {
   $("#main-modal").modal("hide");
 }
 
+function modelEnableStatic(){
+  $("#main-modal").attr({
+    "data-bs-backdrop": "static",
+    "data-bs-keyboard": "false",
+    "aria-labelledby": "staticBackdropLabel",
+    "aria-hidden": "true"
+  });
+}
+
+function modalDisableStatic(){
+  $("#main-modal").removeAttr("data-bs-backdrop");
+  $("#main-modal").removeAttr("data-bs-keyboard");
+  $("#main-modal").removeAttr("aria-labelledby");
+  $("#main-modal").removeAttr("aria-hidden");
+}
+
+function modalSetCloseBtn(Show=true,action=null) {
+  if (Show) {
+    $("#main-modal-close").click(action);
+    $("#main-modal-close").show();
+  }
+  else {
+    $("#main-modal-close").hide();
+  }
+}
+
 function modalSetPrimaryBtn(Show=true,text="Confirm",action=null) {
   if (Show) {
     $("#main-modal-primary").text(text);
