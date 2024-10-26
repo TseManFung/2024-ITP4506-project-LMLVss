@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (input) => !input.classList.contains("d-none")
       );
       inputs.forEach((ele) => {
+        inputEle = ele.getElementsByTagName("input")[0]
         if (ele.id === "radio-group") {
           checked = false;
           ele.querySelectorAll("[name='identity']").forEach((radio) => {
@@ -95,15 +96,28 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!checked) {
             valid = false;
           }
-        } else if (ele.getElementsByTagName("input")[0].value === "") {
+        } else if (inputEle.value === "") {
           valid = false;
-          ele.getElementsByTagName("input")[0].classList.add("is-invalid");
+          inputEle.classList.add("is-invalid");
+        }
+        if (inputEle.getAttribute("type") === "email") {
+          const email = inputEle.value;
+          if (!email.includes("@") || !email.includes(".")) {
+            valid = false;
+            inputEle.classList.add("is-invalid");
+          }
+        } else if (inputEle.getAttribute("type") === "tel") {
+          const tel = inputEle.value;
+          if (tel.length !== 8 || isNaN(tel)) {
+            valid = false;
+            inputEle.classList.add("is-invalid");
+          }
         }
       });
       if (!valid) {
         modalSetPrimaryBtn((Show = false));
         modalSetTitle("information incomplete");
-        modalSetBody("Please fill in all fields");
+        modalSetBody("Please fill in all fields correctly");
         showModal();
         return false;
       }
@@ -144,15 +158,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const current = this.getAttribute("curr");
       const finish = this.getAttribute("fin");
       const next = parseInt(current, 10) + 1;
+      $(".show-beam").removeClass("show-beam");
+      $(".show-password").removeClass("show-password");
       if (!checkInput(current)) {
         return;
       }
 
-      if (correlationProcess(current, finish)) {
-        if (next > finish) {
-          window.location.href = "./login.html";
-        }
+      if (!correlationProcess(current, finish)) {
         return;
+      }
+      if (next > finish) {
+        const username = $("#username").val();
+        $("#ConfirmMSG").text(`You have successfully signed up<br>please use ${username} and your password to login<br>Click OK to login`);
+        $("#btn-next").hide();
+        setTimeout(function () {
+          window.location.href = "./login.html";
+        }, 3000);
+        
       }
 
       $("#card-" + current).addClass("d-none");
