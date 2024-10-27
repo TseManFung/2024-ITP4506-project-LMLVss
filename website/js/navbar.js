@@ -3,7 +3,10 @@ window.addEventListener("scroll",()=>{
     header.classList.toggle("sticky",window.scrollY>0);
 })
 
-
+document.addEventListener("DOMContentLoaded", () => {
+    let header=document.querySelector("header");
+    header.classList.toggle("sticky",window.scrollY>0);
+});
 
 const menuIcon = document.querySelector('.menu-icon');
 const header = document.querySelector('header');
