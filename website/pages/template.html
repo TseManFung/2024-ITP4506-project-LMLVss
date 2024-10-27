@@ -25,27 +25,21 @@
 <body>
   <div id="modal"></div>
 
+  <div class="navbar1"></div>
+
+  <!-- header -->
+  <div style="height: calc(0lvh + 128px)" id="header"></div>
+  <!-- /header -->
+
   <!-- content -->
   <div class="d-flex position-relative content-bg justify-content-center">
-    <div class="container content-wrap">
+    <div class="container">
+      
     </div> 
   </div>
   <!-- /content -->
 
-  <!-- footer -->
-  <footer>
-    <!-- link -->
 
-    <ul class="sns">
-      <!--         <li><a href="https://twitter.com/lycoris_recoil" target="_blank"><img src="images/common/icon_x.png" alt="twitter/X"></a></li>
-              <li><a href="https://www.pixiv.net/users/83515809" target="_blank"><img src="images/common/icon_pixiv.png" alt="pixiv"></a></li> -->
-    </ul>
-
-    <!-- /link -->
-    <p>© 2024 Legend Motor Limited</p>
-
-  </footer>
-  <!-- footer -->
 
   <!-- GoToTop -->
   <div id="page-top" style="">
@@ -57,5 +51,6 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script>$("#modal").load("./component/modal.html")</script>
-
+<script>$(".navbar1").load("../component/navbar.html")</script>
+<script>$("#page-top").before($("<footer>").load("../component/footer.html"))</script>
 </html>
