@@ -19,6 +19,11 @@ $(document).ready(() => {
   if (year) {
     yearInput.val(year);
   }
+  if (getCookie("itemsView") === "cell") {
+    itemsSetCell();
+  } else {
+    itemsSetList();
+  }
   $("#yearInput").attr("max", new Date().getFullYear());
   $("#CarBrand").on("change", (e) => {
     const brand = $("#CarBrand").val();
@@ -30,5 +35,12 @@ $(document).ready(() => {
     }
     CarModal.prop("disabled", false);
     CarModal.load(`../API/getCarModel/${brand}.html`);
+  });
+
+  $("#cell-icon").on("click", () => {
+    itemsSetCell();
+  });
+  $("#list-icon").on("click", () => {
+    itemsSetList();
   });
 });
