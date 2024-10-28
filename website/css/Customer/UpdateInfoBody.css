@@ -10,13 +10,18 @@ a{
   text-decoration: none;
   color: inherit;
 }
-
-a:hover{
-  text-decoration: none;
+.switchPanel{
+  cursor: pointer;
+}
+.switchPanel:hover{
   color: blue;
 }
+
 
 .card{
   cursor: pointer;
 }
 
+.card-text{
+  color: grey;
+}
