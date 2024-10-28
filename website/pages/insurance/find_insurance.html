@@ -153,7 +153,7 @@
             <div class="col position-relative">
               <ul class="d-flex flex-wrap p-0 m-0 position-absolute bottom-0 start-0 flex-set"
                   style="list-style: none; gap: 2px">
-                <li name="Display_mode" class="cursor-pointer">
+                <li name="Display_mode" class="cursor-pointer" id="cell-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -161,7 +161,7 @@
                   </svg>
                 </li>
                 <li style="width: 5px"></li>
-                <li name="Display_mode" class="cursor-pointer">
+                <li name="Display_mode" class="cursor-pointer" id="list-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -216,7 +216,7 @@
                 <select class="form-select" id="sort">
 
                   <option value="R" selected>Recommend</option>
-                  <option value="NA">Newest Arrivals</option>
+                  <option value="N">Newest</option>
                   <option value="PLH">Price: Low to High</option>
                   <option value="PHL">Price: High to Low</option>
                 </select>
@@ -226,23 +226,29 @@
           </div>
           <hr />
           <div class="row">
-            <div id="item" class="item-wrap list">
+            <div id="items" class="item-wrap list">
               <div class="item-box">
                 <!-- onclick go to item detail -->
                 <div class="item-info">
-                  <p class="item-name">name</p>
-                  <p class="item-desc">
-                    Item Description : abcdefghijklmnopqrstuvwxyz
-                  </p>
-                  <hr>
-                  <div class="d-flex item-data">
-                    <span>Price: $12345.00</span> <span>Stock: 123</span>
+                  <div class="item-name">name</div>
+                  <ul class="item-desc">
+                      <li class="item-desc-detail">Insurance item 1: $123</li>
+                      <li class="item-desc-detail">Insurance item 2: $123</li>
+                      <li class="item-desc-detail">Insurance item 1: $123</li>
+                      <li class="item-desc-detail">Insurance item 2: $123</li>
+                  </ul>
+                  <div>
+                    <hr>
+                    <div class="d-flex item-data">
+                      <span>$12345.00 every year</span>
+                    </div>
                   </div>
+
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
                   <button type="button" class="btn btn-primary" onclick="">
-                    Add to cart
+                    Add to application list
                   </button>
                   <br />
                   <button type="button" class="btn btn-primary" onclick="">
