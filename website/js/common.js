@@ -180,3 +180,26 @@ function itemsSetList() {
   setCookie("itemsView", "list", 365);
 }
 
+function insertScript(src, callback=null) {
+  script = document.createElement("script");
+  script.src = src;
+  script.onload = callback;
+  document.head.appendChild(script);
+}
+
+function readJsonFile(file, callback) {
+  fetch(file)
+    .then((response) => {
+      if (!response.ok) {
+        // If the file is not found, create it
+        if (response.status === 404) {
+          return {};
+        }
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => callback(data))
+    .catch((error) => console.error('There was a problem with the fetch operation:', error));
+}
+
