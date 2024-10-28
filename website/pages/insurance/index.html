@@ -69,8 +69,15 @@
           <div class="col-md-6 mb-3">
             <div class="cell">
               <div class="form-floating">
-                <input type="number" class="form-control" id="yearInput" placeholder="YYYY" min="1900" step="1">
+                <input type="number" class="form-control" id="yearInput" placeholder="YYYY" list="yearOptions" min="1900" step="1">
                 <label for="yearInput" class="form-label">Select Year <span style="color: red;">*</span></label>
+                <datalist id="yearOptions">
+                  <script>
+                    for (let i = new Date().getFullYear(); i >= 1900; i--) {
+                      document.write(`<option value="${i}">`);
+                    }
+                  </script>
+                </datalist>
               </div>
             </div>
           </div>
