@@ -19,7 +19,7 @@
   <!-- js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../js/common.js"></script>
-  <script src="../../js/customer/find_insurance.js"></script>
+  <script src="../../js/insurance/find_insurance.js"></script>
   <!-- /js -->
 </head>
 
@@ -91,8 +91,10 @@
                     <div class="row mb-3">
                       <div class="cell">
                         <div class="form-floating">
-                          <input type="number" class="form-control" id="yearInput" placeholder="YYYY" list="yearOptions" min="1900" step="1">
-                          <label for="yearInput" class="form-label">Select Year <span style="color: red;">*</span></label>
+                          <input type="number" class="form-control" id="yearInput" placeholder="YYYY" list="yearOptions"
+                                 min="1900" step="1">
+                          <label for="yearInput" class="form-label">Select Year <span
+                                  style="color: red;">*</span></label>
                           <datalist id="yearOptions">
                             <script>
                               for (let i = new Date().getFullYear(); i >= 1900; i--) {
@@ -119,8 +121,8 @@
                     <div class="row mb-3">
                       <div class="cell">
                         <div class="form-floating">
-                          <input type="number" class="form-control" id="NoDrivers" placeholder="No. of insured drivers" min="1"
-                                 step="1">
+                          <input type="number" class="form-control" id="NoDrivers" placeholder="No. of insured drivers"
+                                 min="1" step="1">
                           <label for="NoDrivers" class="form-label">No. of insured driver</label>
                         </div>
                       </div>
@@ -136,7 +138,8 @@
                     <div class="row mb-3">
                       <div class="cell">
                         <div class="form-floating">
-                          <input type="number" class="form-control" id="experience" placeholder="Driving experience" min="0" max="120" step="1">
+                          <input type="number" class="form-control" id="experience" placeholder="Driving experience"
+                                 min="0" max="120" step="1">
                           <label for="experience" class="form-label">Driving experience</label>
                         </div>
                       </div>
@@ -287,13 +290,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -301,11 +304,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -320,13 +323,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -334,11 +337,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -353,13 +356,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -367,11 +370,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -386,24 +389,24 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
                     </div>
                   </div>
 
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -418,43 +421,43 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -462,11 +465,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -482,13 +485,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -496,11 +499,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -515,13 +518,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -529,11 +532,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -548,13 +551,13 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -562,11 +565,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -581,15 +584,15 @@
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -597,11 +600,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -613,13 +616,13 @@
                   <ul class="item-desc">
                     <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -627,11 +630,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -644,13 +647,13 @@
                     <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
                     <li class="item-desc-detail">Medical Expenses: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -658,11 +661,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>
@@ -676,13 +679,13 @@
                     <li class="item-desc-detail">Third Party Property Damage: $123</li>
                     <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
                     <li class="item-desc-detail">No Claim Discount Protection: $123</li>
-                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
-                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-circle-check align-middle"
+                         style="color: green;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
-                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                      <p>$12,345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
                     </div>
                   </div>
@@ -690,11 +693,11 @@
                 </div>
                 <div class="item-btn">
                   <div class="bg"></div>
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="AddToApplicationList">
                     Add to application list
                   </button>
                   <br />
-                  <button type="button" class="btn btn-primary" onclick="">
+                  <button type="button" class="btn btn-primary" name="ShowMoreDetail">
                     Show more detail
                   </button>
                 </div>

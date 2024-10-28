@@ -43,4 +43,11 @@ $(document).ready(() => {
   $("#list-icon").on("click", () => {
     itemsSetList();
   });
+  $("button[name='AddToApplicationList']").on("click", (e) => {
+    e.preventDefault();
+  })
+  $("button[name='ShowMoreDetail']").on("click", (e) => {
+    e.preventDefault();
+    window.location.href = "./insurance_detail.html";
+  })
 });
