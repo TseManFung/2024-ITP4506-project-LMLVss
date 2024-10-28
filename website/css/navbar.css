@@ -7,7 +7,7 @@
 }
 body{
     min-height: 200vh;
-    background-color: white;
+    background-color: black;
 }
 header{
     position: fixed;
@@ -24,7 +24,7 @@ header{
 
 header .logo{
     font-size: 32px;
-    color: black;
+    color: white;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
@@ -45,7 +45,7 @@ header ul li{
 header ul li a{
     margin: 0 15px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: 500;
     letter-spacing: 2px;
     transition: 0.6s;
@@ -55,12 +55,12 @@ header ul li a{
 
 header.sticky .logo,
 header.sticky ul li a{
-    color: white;
+    color: black;
 }
 
 .menu-icon{
     font-size: 26px;
-    color: black;
+    color: white;
     cursor: pointer;
     display: none;
 }
@@ -68,7 +68,7 @@ header.sticky ul li a{
 @media (min-width:768px) {
     header.sticky{
         padding: 6px 100px;
-        background-color: black;
+        background-color: white;
         transition: 0.6s ease-out;
     }
     header.active{
@@ -114,12 +114,12 @@ header.sticky ul li a{
     .menu-icon {
         display: block;
         font-size: 18px;
-        color: black;
+        color: white;
         cursor: pointer;
     }
     
     .sticky .menu-icon{
-        color: white;
+        color: black;
     }
 
     .sticky 
