@@ -275,6 +275,12 @@ footer ul.sns li img {
 .item-wrap.cell {
   flex-direction: row;
 
+  & .item-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 193px;
+  }
+
   & .item-box {
     cursor: pointer;
     height: 310px;
@@ -290,7 +296,6 @@ footer ul.sns li img {
       }
       & .item-desc {
         font-size: 0.9rem !important;
-        height: 100%;
         overflow: hidden;
       }
     }
@@ -391,7 +396,11 @@ footer ul.sns li img {
 .item-wrap.list {
   flex-direction: column;
   width: 100%;
-
+  & .item-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
   & .item-box {
     width: 100%;
     align-items: center;
