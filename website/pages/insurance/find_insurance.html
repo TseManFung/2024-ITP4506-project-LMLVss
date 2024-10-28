@@ -91,9 +91,15 @@
                     <div class="row mb-3">
                       <div class="cell">
                         <div class="form-floating">
-                          <input type="number" class="form-control" id="yearInput" placeholder="YYYY" min="1900"
-                                 step="1">
-                          <label for="yearInput" class="form-label">Select Year></label>
+                          <input type="number" class="form-control" id="yearInput" placeholder="YYYY" list="yearOptions" min="1900" step="1">
+                          <label for="yearInput" class="form-label">Select Year <span style="color: red;">*</span></label>
+                          <datalist id="yearOptions">
+                            <script>
+                              for (let i = new Date().getFullYear(); i >= 1900; i--) {
+                                document.write(`<option value="${i}">`);
+                              }
+                            </script>
+                          </datalist>
                         </div>
                       </div>
                     </div>
@@ -110,7 +116,31 @@
                 </h2>
                 <div id="panelsDriversDetails" class="accordion-collapse collapse show">
                   <div class="accordion-body">
-
+                    <div class="row mb-3">
+                      <div class="cell">
+                        <div class="form-floating">
+                          <input type="number" class="form-control" id="NoDrivers" placeholder="No. of insured drivers" min="1"
+                                 step="1">
+                          <label for="NoDrivers" class="form-label">No. of insured driver</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="cell">
+                        <div class="form-floating">
+                          <input type="date" class="form-control" id="Age" placeholder="Age of apply driver">
+                          <label for="Age" class="form-label">Age of apply driver</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="cell">
+                        <div class="form-floating">
+                          <input type="number" class="form-control" id="experience" placeholder="Driving experience" min="0" max="120" step="1">
+                          <label for="experience" class="form-label">Driving experience</label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -118,12 +148,32 @@
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                           data-bs-target="#panelsOtherNeeds" aria-expanded="false" aria-controls="panelsOtherNeeds">
-                    Other needs
+                    Other
                   </button>
                 </h2>
                 <div id="panelsOtherNeeds" class="accordion-collapse collapse">
                   <div class="accordion-body">
-
+                    <div class="row mb-3">
+                      <div class="cell">
+                        <p>Purpose of vehicle use</p>
+                        <div id="radio-group" class="ipt-box">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Purpose" id="rdo-private"
+                                   value="private">
+                            <label class="form-check-label" for="rdo-private">Private</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Purpose" id="rdo-commercial"
+                                   value="commercial">
+                            <label class="form-check-label" for="rdo-commercial">Commercial</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Purpose" id="rdo-rental" value="rental">
+                            <label class="form-check-label" for="rdo-rental">Rental</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -230,18 +280,21 @@
               <div class="item-box">
                 <!-- onclick go to item detail -->
                 <div class="item-info">
-                  <div class="item-name">name</div>
+                  <div class="item-name">ABC Comprehensive</div>
                   <ul class="item-desc">
-                      <li class="item-desc-detail">Insurance item 1: $123</li>
-                      <li class="item-desc-detail">Insurance item 2: $123</li>
-                      <li class="item-desc-detail">Insurance item 1: $123</li>
-                      <li class="item-desc-detail">Insurance item 2: $123</li>
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
                   </ul>
                   <div class="item-bottom">
                     <hr>
                     <div class="d-flex item-data">
                       <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
-                      
+
                     </div>
                   </div>
 
@@ -257,7 +310,395 @@
                   </button>
                 </div>
               </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Third Party</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
 
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC 123 456 Third Party</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABCDEFGHIJKLMN 123 456 789 Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Long LongLongLongLongLongLongLongLongLongLong LongLongLong LongLongLong
+                    Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">Medical Expenses: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
+              <div class="item-box">
+                <!-- onclick go to item detail -->
+                <div class="item-info">
+                  <div class="item-name">ABC Comprehensive</div>
+                  <ul class="item-desc">
+                    <li class="item-desc-detail">Third Party Death or Bodily Injury: $123</li>
+                    <li class="item-desc-detail">Third Party Property Damage: $123</li>
+                    <li class="item-desc-detail">Windscreen/ Windows Protection: $123</li>
+                    <li class="item-desc-detail">No Claim Discount Protection: $123</li>
+                    <li class="item-desc-detail">something: <i class="fa-solid fa-check align-middle"
+                         style="color: #00ff1e;"></i></li>
+                  </ul>
+                  <div class="item-bottom">
+                    <hr>
+                    <div class="d-flex item-data">
+                      <p>$12345.00 <br><span style="color:lightgray; font-size: 0.8rem;">every year</span></p>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="item-btn">
+                  <div class="bg"></div>
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Add to application list
+                  </button>
+                  <br />
+                  <button type="button" class="btn btn-primary" onclick="">
+                    Show more detail
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <hr />

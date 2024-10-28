@@ -48,7 +48,6 @@ body {
 }
 .child-center-TB {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .child-center-LR {
@@ -274,11 +273,12 @@ footer ul.sns li img {
 
 .item-wrap.cell {
   flex-direction: row;
-
+  overflow: hidden;
   & .item-bottom {
     position: absolute;
     bottom: 0;
     width: 193px;
+    background-color: white;
   }
 
   & .item-box {
@@ -289,13 +289,14 @@ footer ul.sns li img {
     & .item-info {
       padding-left: 1rem;
       padding-right: 1rem;
-      & .item-name{
-        font-size: 1.2rem !important;
+      overflow: hidden;
+      & .item-name {
+        font-size: 1rem !important;
         font-weight: bold;
         overflow: hidden;
       }
       & .item-desc {
-        font-size: 0.9rem !important;
+        font-size: 0.8rem !important;
         overflow: hidden;
       }
     }
@@ -362,7 +363,8 @@ footer ul.sns li img {
   padding: 10px;
   display: flex;
   height: 100%;
-  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
 
@@ -372,9 +374,8 @@ footer ul.sns li img {
     text-align: left;
     width: 100%;
     overflow: hidden;
-
   }
-  & .item-name{
+  & .item-name {
     font-size: 1.2rem !important;
     font-weight: bold;
     height: fit-content;
@@ -397,8 +398,6 @@ footer ul.sns li img {
   flex-direction: column;
   width: 100%;
   & .item-bottom {
-    position: absolute;
-    bottom: 0;
     width: 100%;
   }
   & .item-box {
@@ -409,15 +408,14 @@ footer ul.sns li img {
     & .item-info {
       padding: 10px;
       width: 100%;
-      & .item-desc{
+      & .item-desc {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        & .item-desc-detail{
+        & .item-desc-detail {
           width: 50%;
         }
       }
-
     }
   }
 
@@ -573,6 +571,13 @@ canvas {
 }
 .white-link:hover {
   color: lightgray;
+}
+
+@media only screen and (min-width: 768px) {
+  .item-wrap.list .item-bottom {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 /*phone*/
