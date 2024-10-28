@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnLogin = document.getElementsByClassName("btn-login")[0];
   const btnNext = document.getElementsByClassName("btn-next")[0];
 
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has("redirect")) {
+    const otherLink = $("#other").attr("href");
+    const redirect = otherLink + "?redirect=" + redirect;
+    $("#other").attr("href", redirect);
+  }
   body.addEventListener("mousemove", function (e) {
     let rect = beam.getBoundingClientRect();
     let mouseX = rect.right + rect.width / 2;
@@ -45,12 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       if (password === "Ab12345678") {
+        if(urlParams.has("redirect")){
+          window.location.href = "./" + urlParams.get("redirect");
+          return
+        }
         if (account === "C") {
-          window.location.href = "./customer/index.html";
+          window.location.href = "./customer/";
         } else if (account === "V") {
-          window.location.href = "./vehicle/index.html";
+          window.location.href = "./vehicle/";
         } else if (account === "I") {
-          window.location.href = "./insurance/index.html";
+          window.location.href = "./insurance/";
         }
         return;
       }
@@ -184,6 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
         modalSetCloseBtn((Show = false));
         modalSetPrimaryBtn((Show = true, text = "OK", action = function () {
           setTimeout(function () {
+            if(urlParams.has("redirect")){
+              window.location.href = "./login.html?redirect=" + urlParams.get("redirect");
+              return
+            }
             window.location.href = "./login.html";
           }, 3000);
           hideModal();
