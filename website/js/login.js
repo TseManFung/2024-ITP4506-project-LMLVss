@@ -51,15 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       if (password === "Ab12345678") {
-        if(urlParams.has("redirect")){
-          window.location.href = "./" + urlParams.get("redirect");
-          return
-        }
         if (account === "C") {
+          if(urlParams.has("redirect")){
+            window.location.href = "./" + urlParams.get("redirect");
+            return
+          }
           window.location.href = "./customer/";
         } else if (account === "V") {
+          if(urlParams.has("redirect")){
+            window.location.href = "./" + urlParams.get("redirect");
+            return
+          }
           window.location.href = "./vehicle/";
         } else if (account === "I") {
+          if(urlParams.has("redirect")){
+            window.location.href = "./" + urlParams.get("redirect");
+            return
+          }
           window.location.href = "./insurance/";
         }
         return;
