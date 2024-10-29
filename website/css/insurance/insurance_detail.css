@@ -67,7 +67,7 @@ span {
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 /* Position the front and back side */
@@ -88,7 +88,7 @@ span {
 .flip-card-back {
   background-color: dodgerblue;
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 button {
