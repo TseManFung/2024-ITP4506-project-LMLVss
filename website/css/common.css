@@ -13,8 +13,8 @@ html {
 
 .content-bg {
   width: 100%;
-
   background: rgba(255, 255, 255, 0.8);
+  min-height: calc(100vh - 244px);
 }
 
 .nav-wrap {
@@ -28,9 +28,9 @@ html {
 }
 
 body {
-  background-color: skyblue !important;
+  background: url(../images/common/bg.jpg) no-repeat top center fixed;
+  background-size: cover;
 }
-
 .space-wrap {
   padding: 10% 20% 10% 20%;
   height: 100lvh;

@@ -32,3 +32,15 @@ function showCurrentStepInfo(step) {
     var id = "#" + step;
     $(id).addClass("activeStepInfo");
 }
+
+$(document).ready(()=>{
+    const dropdownID = $("#dropdownID")
+    const inputID = $("#inputID")
+    const labelID = $("#labelID")
+    $("div[name='ID_card']").click((event)=>{
+        t = event.target.innerText;
+        dropdownID.text(t);
+        inputID.attr("placeholder", t);
+        labelID.text(t);
+    });
+})

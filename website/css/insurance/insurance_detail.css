@@ -18,7 +18,7 @@ hr {
 }
 
 .detail {
-  background-color: dodgerblue;
+  background-color: gray;
   border-radius: 50px;
   padding: 10px;
   & .detail-title {
@@ -29,7 +29,7 @@ hr {
     background-color: white;
     padding: 10px;
     border-radius: 10px;
-    border-color: gray;
+    border-color: rgb(71, 71, 71);
     border-width: 1px;
     border-style: solid;
   }
@@ -52,10 +52,9 @@ span {
 
 .flip-card {
   height: 9rem;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; 
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -65,12 +64,10 @@ span {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateX(180deg);
 }
 
-/* Position the front and back side */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -80,17 +77,60 @@ span {
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
 }
 
-/* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
   color: white;
   transform: rotateX(180deg);
 }
 
 button {
   font-size: 6rem !important;
+}
+
+button {
+  background: white;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: black;
+  transition: 0.5s 0.1s ease-out;
+  text-align: center;
+}
+
+button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+}
+
+button:hover {
+  color: #fff;
+  border: 1px solid black;
+  background: transparent;
+}
+button:hover::before {
+  box-shadow: inset 0 0 0 10em black;
 }

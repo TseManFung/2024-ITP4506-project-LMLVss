@@ -50,4 +50,10 @@ $(document).ready(() => {
     e.preventDefault();
     window.location.href = "./insurance_detail.html";
   })
+  $("button[name='AddToApplicationList']").on("click", (e) => {
+    e.preventDefault();
+    console.log("Add to application list");
+    const url = `input_information.html?brand=${CarBrand.val()}&modal=${CarModal.val()}&year=${yearInput.val()}`;
+    window.location.href = url;
+  })
 });
