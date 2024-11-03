@@ -4,6 +4,6 @@ $(document).ready(() => {
     });
 
     $("#apply").on("click", () => {
-        window.location.href = "input_information.html";
+        window.location.href = "../login.html?redirect=insurance/input_information.html";
     });
 });

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has("redirect")) {
     const otherLink = $("#other").attr("href");
-    const redirect = otherLink + "?redirect=" + redirect;
+    const redirect = otherLink + "?redirect=" + encodeURIComponent(urlParams.get("redirect"));
     $("#other").attr("href", redirect);
   }
   body.addEventListener("mousemove", function (e) {

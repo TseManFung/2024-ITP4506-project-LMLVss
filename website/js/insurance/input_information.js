@@ -79,8 +79,9 @@ $(document).ready(() => {
 
   $("#addDriver").click(() => {
     newestDriver = $(".driver-box").last();
-    driverNum= parseInt(newestDriver.attr("data-driver")) + 1;
+    driverNum = parseInt(newestDriver.attr("data-driver")) + 1;
     newDriver = driver_box_formatter(driverNum);
     newestDriver.after(newDriver);
+    scrollTo(`d${driverNum-1}_marry`);
   });
 });

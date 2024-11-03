@@ -1,100 +1,135 @@
 .hiddenStepInfo {
-    display: none;
+  display: none;
 }
 
 .activeStepInfo {
-    display: block !important;
+  display: block !important;
 }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .step {
-    margin-top: 27px;
+  margin-top: 27px;
 }
 
 .progress {
-    position: relative;
-    height: 25px;
+  position: relative;
+  height: 25px;
 }
 
 .progress > .progress-type {
-    position: absolute;
-    left: 0px;
-    font-weight: 800;
-    padding: 3px 30px 2px 10px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(25, 25, 25, 0.2);
+  position: absolute;
+  left: 0px;
+  font-weight: 800;
+  padding: 3px 30px 2px 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(25, 25, 25, 0.2);
 }
 
 .progress > .progress-completed {
-    position: absolute;
-    right: 0px;
-    font-weight: 800;
-    padding: 3px 10px 2px;
+  position: absolute;
+  right: 0px;
+  font-weight: 800;
+  padding: 3px 10px 2px;
 }
 
 .step {
-    text-align: center;
+  text-align: center;
 }
 
 .step .col-md-2 {
-    background-color: #fff;
-    border: 1px solid #C0C0C0;
-    border-right: none;
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  border-right: none;
 }
 
 .step .col-md-2:last-child {
-    border: 1px solid #C0C0C0;
+  border: 1px solid #c0c0c0;
 }
 
 .step .col-md-2:first-child {
-    border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 .step .col-md-2:last-child {
-    border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
 }
 
 .step .col-md-2:hover {
-    color: #F58723;
-    cursor: pointer;
+  color: #f58723;
+  cursor: pointer;
 }
 
 .step .activestep {
-    color: #F58723;
-    height: 100px;
-    margin-top: -7px;
-    padding-top: 7px;
-    border-left: 6px solid #5CB85C !important;
-    border-right: 6px solid #5CB85C !important;
-    border-top: 3px solid #5CB85C !important;
-    border-bottom: 3px solid #5CB85C !important;
-    vertical-align: central;
+  color: #f58723;
+  height: 100px;
+  margin-top: -7px;
+  padding-top: 7px;
+  border-left: 6px solid #5cb85c !important;
+  border-right: 6px solid #5cb85c !important;
+  border-top: 3px solid #5cb85c !important;
+  border-bottom: 3px solid #5cb85c !important;
+  vertical-align: central;
 }
 
 .step .fa {
-    padding-top: 15px;
-    font-size: 40px;
+  padding-top: 15px;
+  font-size: 40px;
 }
 
-.row > *{
-    padding-left: 0px;
-    padding-right: 0px;
+.row > * {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.driver-box{
-    border: 5px solid #3b3b3b;
-    background-color: rgba(226, 226, 226, 0.75);
+.driver-box {
+  border: 5px solid #3b3b3b;
+  background-color: rgba(226, 226, 226, 0.75);
+  margin-top: 1rem;
+  border-radius: 50px;
+  padding: 1.5rem;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+#addDriver {
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+
+.detail {
+ position: relative;
+  border: 5px solid #3b3b3b;
+  border-radius: 50px;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-top: 1rem;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.detail-price {
+    font-size: 4rem;
+    font-weight: bold;
+    color: cornflowerblue;
     margin-top: 1rem;
-    border-radius: 50px;
-    padding: 1.5rem;
 }
 
-#addDriver{
-    margin-top: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: 1.5rem;
-}
+.detail-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .detail-title {
+    --d: .8em; /* the depth */
+    
+    position: absolute;
+    top: 20px;
+    inset-inline: calc(-1*var(--d));
+    border-bottom: var(--d) solid #0008;
+    line-height: 1.8;
+    clip-path: polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - var(--d)) 100%,calc(100% - var(--d)) calc(100% - var(--d)),var(--d) calc(100% - var(--d)),var(--d) 100%,0 calc(100% - var(--d)));
+    background-color: cornflowerblue; /* the main color */
+  }
