@@ -83,3 +83,18 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.driver-box{
+    border: 5px solid #3b3b3b;
+    background-color: rgba(226, 226, 226, 0.75);
+    margin-top: 1rem;
+    border-radius: 50px;
+    padding: 1.5rem;
+}
+
+#addDriver{
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
