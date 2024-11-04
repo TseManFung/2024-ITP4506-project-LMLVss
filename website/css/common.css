@@ -426,7 +426,6 @@ footer ul.sns li img {
     z-index: 1;
     & button {
       margin: 0px 10px;
-
     }
   }
   & .item-data {
@@ -573,6 +572,33 @@ canvas {
 }
 .white-link:hover {
   color: lightgray;
+}
+
+.step-title {
+  padding: 0.6em;
+  border: #5e0200 5px solid;
+  margin: 50px 0;
+  background: rgb(173, 30, 72);
+  background: linear-gradient(90deg, #93edf7 0%, #cae8ec 50%, #93edf7 100%);
+  box-sizing: border-box;
+  outline: 1px solid #ff5d40;
+  outline-offset: -10px;
+
+  border-radius: 100px;
+  & h1 {
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    -moz-text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+    -webkit-text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+    text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+  }
+  & h3 {
+    color: white;
+    -moz-text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+    -webkit-text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+    text-shadow: 0px 0px 4px rgba(50, 50, 50, 0.7);
+  }
 }
 
 @media only screen and (min-width: 768px) {

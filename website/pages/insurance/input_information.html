@@ -77,8 +77,8 @@
             <div class="row setup-content step activeStepInfo" id="step-1">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 1</h1>
-                        <h3 class="underline">Applicant</h3>
+                        <div class="step-title"><h1>STEP 1</h1>
+                        <h3 class="underline">Applicant</h3></div>
                         <br>
                         <h5 class="underline">Personal</h5>
                         <div class="row">
@@ -205,8 +205,8 @@
             <div class="row setup-content step hiddenStepInfo" id="step-2">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 2</h1>
-                        <h3 class="underline">Vehicle</h3>
+                        <div class="step-title"><h1>STEP 2</h1>
+                        <h3 class="underline">Vehicle</h3></div>
                         <br>
                         <h5 class="underline">Vehicle information</h5>
                         <div class="row">
@@ -293,8 +293,8 @@
             <div class="row setup-content step hiddenStepInfo" id="step-3">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 3</h1>
-                        <h3 class="underline">Driver</h3>
+                        <div class="step-title"><h1>STEP 3</h1>
+                        <h3 class="underline">Driver</h3></div>
                         <div class="driver-box" id="driver1" data-driver="1">
                             <h5 class="underline">Car Owner / Named Driver 1 Information</h5>
                             <div class="row">
@@ -431,8 +431,8 @@
             <div class="row setup-content step hiddenStepInfo" id="step-4">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 4</h1>
-                        <h3 class="underline">Car insurance</h3>
+                        <div class="step-title"><h1>STEP 4</h1>
+                        <h3 class="underline">Car insurance</h3></div>
                         <div class="detail mb-5">
                             <h2 class="detail-title">ABC Comprehensive</h2>
                             <div class="row insurance-detail m-3">
@@ -478,7 +478,8 @@
                             <hr>
                             <div class="row m-3">
                                 <div class="col m-3">
-                                    <h4 class="detail-category detail-price highlight align-middle">$1,234 <span>/ year</span></h4>
+                                    <h4 class="detail-category detail-price highlight align-middle">$1,234 <span>/
+                                            year</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -488,8 +489,8 @@
             <div class="row setup-content step hiddenStepInfo" id="step-5">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 5</h1>
-                        <h3 class="underline">Payment</h3>
+                        <div class="step-title"><h1>STEP 5</h1>
+                        <h3 class="underline">Payment</h3></div>
                         Upload the application.
                         This may require a confirmation email.
                     </div>
@@ -498,10 +499,19 @@
             <div class="row setup-content step hiddenStepInfo" id="step-6">
                 <div class="col-xs-12">
                     <div class="col-md-12 well text-center">
-                        <h1>STEP 6</h1>
-                        <h3 class="underline">Upload file</h3>
-                        Send us feedback on the overall process.
-                        This step is not obligatory.
+                        <div class="step-title"><h1>STEP 6</h1>
+                        <h3 class="underline">Upload file</h3></div>
+                        <div class="row">
+                            <div class="col m-1">
+                                <label for="item-img-input" class="form-label">select or drop the file</label>
+                                <input class="form-control" type="file" name="fileToUpload" id="item-img-input">
+                            </div>
+                            <div class="col m-1">
+                                <ul id="file-list">
+
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

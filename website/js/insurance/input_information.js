@@ -82,6 +82,43 @@ $(document).ready(() => {
     driverNum = parseInt(newestDriver.attr("data-driver")) + 1;
     newDriver = driver_box_formatter(driverNum);
     newestDriver.after(newDriver);
-    scrollTo(`d${driverNum-1}_marry`);
+    scrollTo(`d${driverNum - 1}_marry`);
+  });
+  same_with_applicant = $("#same_with_applicant");
+  same_with_applicant.on("change", function () {
+    if (same_with_applicant.val() == "Y") {
+      $("#d1_personal_information").addClass("d-none");
+    } else {
+      $("#d1_personal_information").removeClass("d-none");
+    }
+  });
+
+  fileInput = $('input[type="file"]');
+  fileList = []
+  function change_img() {
+    if (fileInput.val() === "") {
+      fileInput.removeClass("image-dropping");
+    } else {
+      fileInput.addClass("image-dropping");
+    }
+    if (fileInput[0].files && fileInput[0].files[0] && !fileList.includes(fileInput[0].files[0].name)) {
+      fileList.push(fileInput[0].files[0].name);
+      $("#file-list").append(`<li>${fileInput[0].files[0].name}</li>`);
+    }
+    //clear file input
+    fileInput.removeClass("image-dropping");
+  }
+  fileInput.bind("dragover", function () {
+    fileInput.addClass("image-dropping");
+  });
+  fileInput.bind("dragleave", function () {
+    if (fileInput.val() === "") {
+      fileInput.removeClass("image-dropping");
+    } else {
+      fileInput.addClass("image-dropping");
+    }
+  });
+  fileInput.bind("change drop", function () {
+    change_img();
   });
 });
