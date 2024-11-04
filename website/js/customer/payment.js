@@ -57,7 +57,7 @@ $(document).ready(function () {
       modalSetPrimaryBtn(true, "Pay", () => {
         i = checkInputIn("main-modal-body", "is-invalid");
         if (i.length == 0) {
-          window.opener.postMessage(true, "*");
+          window.opener.postMessage("credit", "*");
         }
       });
     } else if (method == "FPS") {
@@ -67,7 +67,7 @@ $(document).ready(function () {
       );
       generateQRCode("qrcode", price, 256, 256);
       modalSetPrimaryBtn(true, "Paid", () => {
-        window.opener.postMessage(true, "*");
+        window.opener.postMessage("FPS", "*");
       });
     }
     showModal();
