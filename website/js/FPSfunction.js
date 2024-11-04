@@ -1,19 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-  insertScript("website/js/FPS.js");
-  insertScript(
-    "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-  );
-});
+jsonPath = "../../FPS.json";
 
-var jsonPath = "website/FPS.json";
-
-function FPSsetPrice(targetID, price) {
-  const target = document.getElementById(targetID);
-  target.setAttribute("data-price", price);
-}
-
-function generateQRCode(targetID, width, height) {
-  const target = document.getElementById(targetID);
+function generateQRCode(targetID, price, width, height) {
+  const target = FPSsetPrice(targetID, price);
   const transactionAmount = target.getAttribute("data-price");
   readJsonFile(jsonPath, (data) => {
     phone = data.phone;
@@ -34,4 +22,10 @@ function generateQRCode(targetID, width, height) {
     });
     target.title = "Scan to pay";
   });
+}
+
+function FPSsetPrice(targetID, price) {
+  const target = document.getElementById(targetID);
+  target.setAttribute("data-price", price);
+  return target;
 }

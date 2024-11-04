@@ -9,6 +9,10 @@ function modalSetTitle(title) {
   $("#main-modal-title").text(title);
 }
 
+function modalLoadBody(path) {
+  $("#main-modal-body").load(path);
+}
+
 function modalSetBody(body) {
   $("#main-modal-body").html(body);
 }
@@ -180,11 +184,12 @@ function itemsSetList() {
   setCookie("itemsView", "list", 365);
 }
 
-function insertScript(src, callback=null) {
+async function insertScript(src, callback=null) {
   script = document.createElement("script");
   script.src = src;
   script.onload = callback;
   document.head.appendChild(script);
+  await new Promise((resolve) => script.onload = resolve);
 }
 
 function readJsonFile(file, callback) {
@@ -203,3 +208,16 @@ function readJsonFile(file, callback) {
     .catch((error) => console.error('There was a problem with the fetch operation:', error));
 }
 
+function checkInputIn(elementID, warningClass = ""){
+  const element = document.getElementById(elementID);
+  let emptyInput = [];
+
+  element.querySelectorAll("input[required]").forEach((input) => {
+      if (!input.value || input.value.trim() === "") {
+          emptyInput.push(input);
+          input.classList.add(warningClass);
+      }
+  });
+
+  return emptyInput;
+}

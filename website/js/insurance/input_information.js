@@ -121,4 +121,12 @@ $(document).ready(() => {
   fileInput.bind("change drop", function () {
     change_img();
   });
+  $("#openPayment").click(function() {
+    var popup = window.open("../customer/payment.html?price=123", "Payment", "width=720,height=1280");
+
+    window.addEventListener("message", function(event) {
+        popup.close();
+        console.log("Data received: " + event.data);
+    });
+});
 });

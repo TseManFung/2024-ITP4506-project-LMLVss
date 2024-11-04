@@ -21,6 +21,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="../../js/common.js"></script>
   <script src="../../js/customer/payment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="../../js/FPS.js"></script>
+  <script src="../../js/FPSFunction.js"></script>
 
   <!-- /js -->
 </head>
@@ -54,7 +57,7 @@
           <h4 class="header">Payment method</h4>
           <hr>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="paymentMethod" id="creditcard" value="creditcard">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="creditcard" value="credit">
             <label class="form-check-label" for="creditcard">
               <i class="fab fa-cc-visa fa-2xl"></i>
               <i class="fab fa-cc-mastercard fa-2xl"></i>
@@ -71,7 +74,7 @@
           <hr>
 
         </div>
-        <button class="btn btn-primary btn-block mt-4">Pay HK$ <span name="price"></span></button>
+        <button class="btn btn-primary btn-block mt-4" id="btn-pay">Pay HK$ <span name="price"></span></button>
 
       </div>
     </div>
