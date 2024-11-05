@@ -509,49 +509,61 @@
                             <hr>
                             <button class="btn btn-primary" id="openPayment">Pay</button>
                             <p id="pay-status"></p>
-                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row setup-content step hiddenStepInfo" id="step-6">
-                    <div class="col-xs-12">
-                        <div class="col-md-12 well text-center">
-                            <div class="step-title">
-                                <h1>STEP 6</h1>
-                                <h3 class="underline">Upload file</h3>
-                            </div>
-                            <div class="row">
-                                <div class="col m-1">
-                                    <label for="item-img-input" class="form-label">select or drop the file</label>
-                                    <input class="form-control" type="file" name="fileToUpload" id="item-img-input">
-                                </div>
-                                <div class="col m-1">
-                                    <ul id="file-list">
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col d-grid gap-2 col-8 mx-auto">
-                        <button class="btn btn-primary btn-lg" id="btn-next" type="button" curr="1" fin="6"
-                                pre-text="Save and Continue" fin-text="Submit">Save
-                            and Continue</button>
                     </div>
                 </div>
             </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-6">
+                <div class="col-xs-12">
+                    <div class="col-md-12 well text-center">
+                        <div class="step-title">
+                            <h1>STEP 6</h1>
+                            <h3 class="underline">Upload file</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col m-1 text-start">
+                                <p>You need to upload:</p>
+                                <ul>
+                                    <li>HKID / Visa of every driver and applicant</li>
+                                    <li>Driving License of every driver</li>
+                                    <li>Vehicle Registration Document (VRD)</li>
+                                    <li>FPS record (if you are paid by FPS)</li>
+                                    <li>Other file</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m-1">
+                                <label for="item-img-input" class="form-label">select or drop the file</label>
+                                <input class="form-control" type="file" name="fileToUpload" id="item-img-input">
+                            </div>
+                            <div class="col m-1">
+                                <ul id="file-list">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col d-grid gap-2 col-8 mx-auto">
+                    <button class="btn btn-primary btn-lg" id="btn-next" type="button" curr="1" fin="6"
+                            pre-text="Save and Continue" fin-text="Submit">Save
+                        and Continue</button>
+                </div>
+            </div>
         </div>
-        <!-- /content -->
+    </div>
+    <!-- /content -->
 
 
 
-        <!-- GoToTop -->
-        <div id="page-top" style="">
-            <a href="#header"><img src="../../images/common/returan-top.png" /></a>
-        </div>
-        <!-- /GoToTop -->
+    <!-- GoToTop -->
+    <div id="page-top" style="">
+        <a href="#header"><img src="../../images/common/returan-top.png" /></a>
+    </div>
+    <!-- /GoToTop -->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

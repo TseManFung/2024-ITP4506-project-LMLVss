@@ -95,6 +95,7 @@ $(document).ready(() => {
 
   fileInput = $('input[type="file"]');
   fileList = []
+  liNum = 0;
   function change_img() {
     if (fileInput.val() === "") {
       fileInput.removeClass("image-dropping");
@@ -103,10 +104,19 @@ $(document).ready(() => {
     }
     if (fileInput[0].files && fileInput[0].files[0] && !fileList.includes(fileInput[0].files[0].name)) {
       fileList.push(fileInput[0].files[0].name);
-      $("#file-list").append(`<li>${fileInput[0].files[0].name}</li>`);
+      $("#file-list").append(`<li id="file${liNum}">${fileInput[0].files[0].name} <div id="del${liNum}">X</div></li>`);
+      //add click event to remove file
+      $(`#file${liNum} div`).click(function () {
+        p=$(this).parent()
+        fileList = fileList.filter(function(value, index, arr){
+          return value != p.text().slice(0, -2);
+        });
+        p.remove();
+      });
     }
     //clear file input
     fileInput.removeClass("image-dropping");
+    liNum++;
   }
   fileInput.bind("dragover", function () {
     fileInput.addClass("image-dropping");
