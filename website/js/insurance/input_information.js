@@ -107,8 +107,8 @@ $(document).ready(() => {
       $("#file-list").append(`<li id="file${liNum}">${fileInput[0].files[0].name} <div id="del${liNum}">X</div></li>`);
       //add click event to remove file
       $(`#file${liNum} div`).click(function () {
-        p=$(this).parent()
-        fileList = fileList.filter(function(value, index, arr){
+        p = $(this).parent()
+        fileList = fileList.filter(function (value, index, arr) {
           return value != p.text().slice(0, -2);
         });
         p.remove();
@@ -129,22 +129,33 @@ $(document).ready(() => {
     }
   });
   fileInput.bind("change drop", function () {
-    change_img();
+    if (fileInput[0].files && fileInput[0].files[0]) {
+      const newFileName = fileInput[0].files[0].name;
+
+  
+      if (fileList.includes(newFileName)) {
+        const indexToRemove = fileList.indexOf(newFileName);
+        fileList.splice(indexToRemove, 1);
+        $(`#file${indexToRemove}`).remove();
+      }
+
+      change_img();
+    }
   });
-  $("#openPayment").click(function() {
+  $("#openPayment").click(function () {
     var popup = window.open("../customer/payment.html?price=123", "Payment", "width=720,height=1280");
 
-    window.addEventListener("message", function(event) {
-        popup.close();
-        if(event.data){
-          $("#openPayment").hide();
-          $("#pay-status").addClass("success");
-          $("#pay-status").text("Payment Success");
-        }else{
-          $("#pay-status").addClass("fail");
-          $("#pay-status").text("Payment Failed");
+    window.addEventListener("message", function (event) {
+      popup.close();
+      if (event.data) {
+        $("#openPayment").hide();
+        $("#pay-status").addClass("success");
+        $("#pay-status").text("Payment Success");
+      } else {
+        $("#pay-status").addClass("fail");
+        $("#pay-status").text("Payment Failed");
 
-        }
+      }
     });
-});
+  });
 });
