@@ -126,7 +126,15 @@ $(document).ready(() => {
 
     window.addEventListener("message", function(event) {
         popup.close();
-        console.log("Data received: " + event.data);
+        if(event.data){
+          $("#openPayment").hide();
+          $("#pay-status").addClass("success");
+          $("#pay-status").text("Payment Success");
+        }else{
+          $("#pay-status").addClass("fail");
+          $("#pay-status").text("Payment Failed");
+
+        }
     });
 });
 });

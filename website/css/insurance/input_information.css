@@ -133,3 +133,12 @@
     clip-path: polygon(0 0,100% 0,100% calc(100% - var(--d)),calc(100% - var(--d)) 100%,calc(100% - var(--d)) calc(100% - var(--d)),var(--d) calc(100% - var(--d)),var(--d) 100%,0 calc(100% - var(--d)));
     background-color: cornflowerblue; /* the main color */
   }
+  #pay-status{
+    &.success{
+      color: green;
+    }
+    &.fail{
+      color: red;
+    }
+    font-size: 1.5rem;
+  }
