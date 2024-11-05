@@ -63,12 +63,13 @@ body {
 
 
 .third-wrapper .right-side-wrapper .right-side-container {
-    background-image: url("/website/images/indexPage/insuranceaa.avif");
+    background-image: url("/website/images/indexPage/insurance_waifu2x_art_noise1.png");
     background-color: #fbfbfd;
     background-position: bottom;
     padding-top: 35px;
     margin: 0 0 10px 0;
-    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .left-side-container,
