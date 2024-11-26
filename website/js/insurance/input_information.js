@@ -71,7 +71,15 @@ $(document).ready(() => {
     const curr = parseInt(btn_next.attr("curr"));
     const fin = btn_next.attr("fin");
     if (curr == fin) {
-      window.location.href = "input_information.html";
+      modalSetTitle("Submit Successfully");
+      modalSetBody('Your application has been submitted successfully. <br>Your application number is <span style="color:red;">ABC123456</span>.<br>This may take 3-5 working days to process.');
+      modalSetSecondaryBtn(false);
+      modalSetCloseBtn(false);
+      modelEnableStatic();
+      modalSetPrimaryBtn(true, "OK", () => {
+        window.location.href = "./application_list.html";
+      });
+      showModal();
     } else {
       $(`#step-label-${curr + 1}`).click();
     }
