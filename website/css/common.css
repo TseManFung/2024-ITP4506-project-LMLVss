@@ -403,8 +403,6 @@ footer ul.sns li img {
   & .item-box {
     width: 100%;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
     & .item-info {
       padding: 10px;
       width: 100%;
@@ -416,6 +414,10 @@ footer ul.sns li img {
           width: 50%;
         }
       }
+    }
+    &.space{
+    justify-content: space-between;
+    flex-direction: column;
     }
   }
 
