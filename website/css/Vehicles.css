@@ -1,0 +1,36 @@
+body{
+    background-color: white !important;
+    background-image: none !important;
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .color-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .color-circle.selected {
+    border-color: black;
+  }
+  
+  .badge {
+    background-color: red;
+    color: white;
+    float: right;
+    padding: 0.2em 0.5em;
+    border-radius: 0.25em;
+  }
+
+  .accordion-body {
+    max-height: 200px; 
+    overflow-y: auto;
+  }
