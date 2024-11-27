@@ -1,13 +1,14 @@
 
-<script src="/website/js/common.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
-<body>
+<script>
+    if (!document.querySelector('script[src*="common.js"]')) {
+        var script = document.createElement('script');
+        script.src = "/website/js/common.js";
+        document.head.appendChild(script);
+    }
+</script>
     
     <a aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp" src="/website/images/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" />
         </a>
-</body>
 
 <script>
     $(document).ready(function(){
