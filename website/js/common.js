@@ -169,8 +169,8 @@ function getCookie(cname) {
 }
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function itemsSetCell() {
@@ -184,7 +184,7 @@ function itemsSetList() {
   setCookie("itemsView", "list", 365);
 }
 
-async function insertScript(src, callback=null) {
+async function insertScript(src, callback = null) {
   script = document.createElement("script");
   script.src = src;
   script.onload = callback;
@@ -208,16 +208,28 @@ function readJsonFile(file, callback) {
     .catch((error) => console.error('There was a problem with the fetch operation:', error));
 }
 
-function checkInputIn(elementID, warningClass = ""){
+function checkInputIn(elementID, warningClass = "") {
   const element = document.getElementById(elementID);
   let emptyInput = [];
 
   element.querySelectorAll("input[required]").forEach((input) => {
-      if (!input.value || input.value.trim() === "") {
-          emptyInput.push(input);
-          input.classList.add(warningClass);
-      }
+    if (!input.value || input.value.trim() === "") {
+      emptyInput.push(input);
+      input.classList.add(warningClass);
+    }
   });
 
   return emptyInput;
+}
+
+if (!String.format) {
+  String.format = function (format) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return format.replace(/{(\d+)}/g, function (match, number) {
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+        ;
+    });
+  };
 }
