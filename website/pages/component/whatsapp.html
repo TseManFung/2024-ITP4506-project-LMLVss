@@ -1,0 +1,21 @@
+
+<script src="/website/js/common.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<body>
+    
+    <a aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp" src="/website/images/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" />
+        </a>
+</body>
+
+<script>
+    $(document).ready(function(){
+        readJsonFile("/website/whatsapp.json", function(data){
+            const message = String.format(data.text, "Sam","Yau");
+            $("a").attr("href", String.format(data.link, data.phone, message));
+
+        });
+
+    });
+</script>

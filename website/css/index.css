@@ -1,10 +1,18 @@
 body {
-    background-color: white !important;
+    background-color: black !important;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+  }
 
 .container {
     width: 100% !important;
 }
+
 
 .index_first_banner {
     position: relative;
@@ -30,7 +38,8 @@ body {
     text-align: center;
     padding: 65px 20px;
     color: #fff;
- 
+
+
 }
 
 
@@ -47,7 +56,7 @@ body {
 
 /* Fourth section */
 .fourth-wrapper {
-    background-image: url("../images/home/iphone11-pro-bg.jpg");
+    background-color: white;
     height: 25vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,9 +96,20 @@ body {
     padding-left: 0px;
 }
 
+.third-wrapper .title-wraper{
+    text-align: center;
+    color: white;
+}
+
+.third-wrapper .description-wraper{
+    text-align: center;
+}
+
 .third-wrapper .links-wrapper {
     max-width: 300px;
     margin: 0 auto;
+    text-align: center;
+
 }
 
 .links-wrapper ul {
@@ -121,7 +141,7 @@ body {
 }
 
 .links-wrapper ul li a:hover {
-    color: #000;
+    color: black;
 }
 
 .links-wrapper ul li a:after {
