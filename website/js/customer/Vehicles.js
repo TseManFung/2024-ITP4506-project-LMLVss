@@ -44,4 +44,21 @@ document.addEventListener('DOMContentLoaded', function () {
       updateCount('.model-checkbox', modelCount);
       updateCount('.color-checkbox', colorCount);
     });
+
+    if (getCookie("itemsView") === "cell") {
+      itemsSetCell();
+          $("#toggleDiv").toggle(); // 切換顯示和隱藏
+
+    } else {
+      itemsSetList();
+    }
+
+    $("#cell-icon").on("click", () => {
+      itemsSetCell();
+      $("#toggleDiv").toggle(); 
+
+    });
+    $("#list-icon").on("click", () => {
+      itemsSetList();
+    });
   });

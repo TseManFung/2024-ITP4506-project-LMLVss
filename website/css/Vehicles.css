@@ -34,3 +34,67 @@ body{
     max-height: 200px; 
     overflow-y: auto;
   }
+
+  .item-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .item.box {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item-info {
+    width: 100%;
+    height: auto; 
+  }
+
+  .item-wrap .btnaddToCart{
+    background: rgb(238, 74, 74);    color: white;
+    border: 25px;
+  }
+
+  .item-wrap .btnShowDeatil{
+    color: red;
+  }
+  .item-wrap .btnaddToCart:hover{
+    background: red;
+    color: white;
+    border: 2px ;
+  }
+  .item-wrap .btnShowDeatil:hover{
+    background: rgb(231, 78, 78);
+    color: white;
+
+  }
+
+.item-wrap.cell .item-name{
+  display:none;
+}
+
+.item-wrap.cell .item-info {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.item-wrap.cell .item-info hr {
+  width: 120%; 
+  margin: 10px auto; 
+}
+
+.item-wrap.cell .item-data {
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.item-wrap.cell .item-data p {
+  margin: 0 auto; 
+}
+  
