@@ -97,4 +97,11 @@ body{
 .item-wrap.cell .item-data p {
   margin: 0 auto; 
 }
-  
+
+.item-wrap.cell .item-image{
+  margin-left: -10px;
+}
+
+.item-wrawp.cell button{
+  z-index: 3;
+}
