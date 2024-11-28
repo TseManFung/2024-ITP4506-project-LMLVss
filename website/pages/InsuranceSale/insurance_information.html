@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-    <title>Fill in page</title>
+    <title>Insurance information</title>
 
     <!-- css -->
     <!-- icon -->
@@ -21,7 +20,8 @@
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../../js/common.js"></script>
-    <script src="../../js/insurance/input_information.js"></script>
+    <script src="../../js/StepProcess.js"></script>
+    <script src="../../js/InsuranceSale/insurance_information.js"></script>
     <!-- /js -->
 </head>
 
@@ -71,7 +71,7 @@
                     </div>
                     <div id="step-label-6" class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-6');">
                         <span class="fa fa-regular fa-folder-open"></span>
-                        <p>Upload file</p>
+                        <p>File</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,8 @@
                         <div class="row">
                             <div class="col m-1">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="DoB" placeholder="Date of Birth">
+                                    <input type="date" class="form-control" id="DoB" placeholder="Date of Birth"
+                                           value="2000-01-01">
                                     <label for="DoB">Date of Birth</label>
                                 </div>
                             </div>
@@ -119,7 +120,7 @@
                                 <div class="form-floating">
                                     <select class="form-select" id="gender">
                                         <option selected value="">Select a gender</option>
-                                        <option value="M">Male</option>
+                                        <option value="M" selected>Male</option>
                                         <option value="F">Female</option>
                                         <option value="O">Other</option>
                                     </select>
@@ -143,7 +144,7 @@
                                     </ul>
                                     <div class="form-floating">
                                         <input type="password" class="form-control" id="inputID" placeholder="HKID"
-                                               autocomplete="off">
+                                               autocomplete="off" value="A123456(1)">
                                         <label for="inputID" id="labelID">HKID</label>
                                     </div>
                                 </div>
@@ -175,7 +176,7 @@
                             <div class="col m-1">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="Address1"
-                                           placeholder="Address1(Flat/Room/Floor/Building Name)">
+                                           placeholder="Address1(Flat/Room/Floor/Building Name)" value="idk">
                                     <label for="Address1">Address1(Flat/Room/Floor/Building Name)</label>
                                 </div>
                             </div>
@@ -184,7 +185,7 @@
                             <div class="col m-1">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="Address2"
-                                           placeholder="Address2(Street/Area)">
+                                           placeholder="Address2(Street/Area)" value="idk">
                                     <label for="Address2">Address2(Street/Area)</label>
                                 </div>
                             </div>
@@ -193,7 +194,7 @@
                             <div class="col m-1">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="Address3"
-                                           placeholder="Address3(District/City)">
+                                           placeholder="Address3(District/City)" value="idk">
                                     <label for="Address3">Address3(District/City)</label>
                                 </div>
                             </div>
@@ -229,7 +230,7 @@
                             <div class="col m-1">
                                 <div class="form-floating">
                                     <select class="form-select" id="CarModal" disabled>
-                                        <option value="" selected>Select Car Modal</option>
+                                        <option value="">Select Car Modal</option>
                                     </select>
                                     <label for="CarModal">Car Modal</label>
                                 </div>
@@ -239,7 +240,7 @@
                             <div class="col m-1">
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="yearInput" placeholder="YYYY"
-                                           list="yearOptions" min="1900" step="1">
+                                           list="yearOptions" min="1900" step="1" value="2020">
                                     <label for="yearInput" class="form-label">Select Year</label>
                                     <datalist id="yearOptions">
                                         <script>
@@ -253,7 +254,7 @@
                             <div class="col input-group m-1">
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="Cylinder"
-                                           placeholder="Vehicle Cylinder Capacity" step="1" min="0">
+                                           placeholder="Vehicle Cylinder Capacity" value="5000" step="1" min="0">
                                     <label for="Cylinder">Vehicle Cylinder Capacity</label>
                                 </div>
                                 <span class="input-group-text">CC</span>
@@ -264,7 +265,7 @@
                                 <span class="input-group-text">HK$</span>
                                 <div class="form-floating">
                                     <input type="number" class="form-control" id="EstimatedValue"
-                                           placeholder="Estimated Vehicle Value" step="1" min="0">
+                                           placeholder="Estimated Vehicle Value" value="123456" step="1" min="0">
                                     <label for="EstimatedValue">Estimated Vehicle Value</label>
                                 </div>
                             </div>
@@ -276,7 +277,7 @@
                                 <div id="radio-group" class="ipt-box">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="Purpose" id="rdo-private"
-                                               value="private">
+                                               value="private" checked>
                                         <label class="form-check-label" for="rdo-private">Private</label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -308,100 +309,11 @@
                                 <div class="col m-1">
                                     <div class="form-floating">
                                         <select class="form-select" id="same_with_applicant">
-                                            <option selected value="N">No</option>
+                                            <option selected  value="N">No</option>
                                             <option value="Y">Yes</option>
                                         </select>
                                         <label for="same_with_applicant">Is Car Owner / Named Driver 1 information the
                                             same as the applicant?</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="d1_personal_information">
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="d1_FirstName"
-                                                   placeholder="First Name in english">
-                                            <label for="d1_FirstName">First Name in english</label>
-                                        </div>
-                                    </div>
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="d1_LastName"
-                                                   placeholder="Last Name in english">
-                                            <label for="d1_LastName">Last Name in english</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="d1_CnName"
-                                                   placeholder="Chinese Name">
-                                            <label for="d1_CnName">Chinese Name</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="d1_DoB"
-                                                   placeholder="Date of Birth">
-                                            <label for="d1_DoB">Date of Birth</label>
-                                        </div>
-                                    </div>
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="d1_gender">
-                                                <option selected value="">Select a gender</option>
-                                                <option value="M">Male</option>
-                                                <option value="F">Female</option>
-                                                <option value="O">Other</option>
-                                            </select>
-                                            <label for="d1_gender">Gender</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="input-group">
-                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                                    data-bs-toggle="dropdown" aria-expanded="false"
-                                                    id="d1_dropdownID">HKID</button>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="dropdown-item cursor-pointer" name="ID_card">HKID</div>
-                                                </li>
-                                                <li>
-                                                    <div class="dropdown-item cursor-pointer" name="ID_card">Visa ID
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="form-floating">
-                                                <input type="password" class="form-control" id="d1_inputID"
-                                                       placeholder="HKID" autocomplete="off">
-                                                <label for="d1_inputID" id="d1_labelID">HKID</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <h5 class="underline">Content</h5>
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="d1_email" placeholder="Email">
-                                            <label for="d1_email">Email</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col m-1">
-                                        <div class="form-floating">
-                                            <input type="d1_tel" class="form-control" id="d1_tel"
-                                                   placeholder="Phone number">
-                                            <label for="d1_tel">Phone number</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -422,16 +334,12 @@
                                 <div class="col m-1">
                                     <div class="form-floating">
                                         <input type="number" class="form-control" id="d1_drive_year"
-                                               placeholder="Driving Years" step="1" min="0">
+                                               placeholder="Driving Years" value="3" step="1" min="0">
                                         <label for="d1_drive_year">Driving Years</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <button class="btn btn-secondary btn-lg" id="addDriver">+ Add Driver</button>
-
                     </div>
                 </div>
             </div>
@@ -508,8 +416,7 @@
                                 <span class="amount">HK$ <span name="price">123</span></span>
                             </div>
                             <hr>
-                            <button class="btn btn-primary" id="openPayment">Pay</button>
-                            <p id="pay-status"></p>
+                            <p id="pay-status" class="success">Payment Success, pay by FPS (bill number: ABCDEFG...)</p>
                         </div>
                     </div>
                 </div>
@@ -519,28 +426,15 @@
                     <div class="col-md-12 well text-center">
                         <div class="step-title">
                             <h1>STEP 6</h1>
-                            <h3 class="underline">Upload file</h3>
+                            <h3 class="underline">File</h3>
                         </div>
                         <div class="row">
-                            <div class="col m-1 text-start">
-                                <p>You need to upload:</p>
-                                <ul>
-                                    <li>HKID / Visa of every driver and applicant</li>
-                                    <li>Driving License of every driver</li>
-                                    <li>Vehicle Registration Document (VRD)</li>
-                                    <li>FPS record (if you are paid by FPS)</li>
-                                    <li>Other file</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col m-1">
-                                <label for="item-img-input" class="form-label">select or drop the file</label>
-                                <input class="form-control" type="file" name="fileToUpload" id="item-img-input">
-                            </div>
                             <div class="col m-1">
                                 <ul id="file-list">
-
+                                    <li>HKID.png<div id="download0"><i class="fa-solid fa-download"></i></div></li>
+                                    <li>DrivingLicense.png<div id="download1"><i class="fa-solid fa-download"></i></div></li>
+                                    <li>VRD.png<div id="download2"><i class="fa-solid fa-download"></i></div></li>
+                                    <li>FPS.png<div id="download3"><i class="fa-solid fa-download"></i></div></li>
                                 </ul>
                             </div>
                         </div>
@@ -548,10 +442,10 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col d-grid gap-2 col-8 mx-auto">
-                    <button class="btn btn-primary btn-lg" id="btn-next" type="button" curr="1" fin="6"
-                            pre-text="Save and Continue" fin-text="Submit">Save
-                        and Continue</button>
+                <div class="col d-grid gap-2 col-8 mx-auto" id="btnGrp">
+                    <button class="btn btn-primary btn-lg" type="button" id="btnNext" curr="1" fin="6" pre-text="Next"
+                            fin-text="Accept">Next</button>
+                    <button class="btn btn-danger btn-lg" type="button" id="btnReject" style="display: none;">Reject</button>
                 </div>
             </div>
         </div>
@@ -574,3 +468,14 @@
 <script>$("#page-top").before($("<footer>").load("../component/footer.html"))</script>
 
 </html>
+
+<script>
+    $(document).ready(()=>{
+        CarBrand = $("#CarBrand")
+        CarModal = $("#CarModal")
+        CarBrand.val("BMW")
+        CarModal.load(`../API/getCarModel/BMW.html`);
+        CarModal.val("BMW Car Modal 1");
+        $("#same_with_applicant").val("Y")
+    })
+</script>

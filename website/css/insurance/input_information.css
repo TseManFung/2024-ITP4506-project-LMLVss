@@ -161,7 +161,13 @@
     }
     & div {
       height: 100%;
-      color: red;
+      &[id^="del"]{
+        color: red;
+      }
+      &[id^="download"] {
+        display: flex;
+        align-items: center;
+      }
       position: absolute;
       right: 1rem;
       cursor: pointer;
@@ -170,3 +176,4 @@
     }
   }
 }
+

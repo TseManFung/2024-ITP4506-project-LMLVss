@@ -57,7 +57,7 @@ $(document).ready(function () {
       modalSetPrimaryBtn(true, "Pay", () => {
         i = checkInputIn("main-modal-body", "is-invalid");
         if (i.length == 0) {
-          window.opener.postMessage("credit", "*");
+          window.opener.postMessage("credit card", "*");
         }
       });
     } else if (method == "FPS") {
