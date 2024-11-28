@@ -37,133 +37,153 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Remove product row when "Remove" button is clicked
+    const removeButtons = document.querySelectorAll('.btn-outline-danger');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const row = this.closest('tr');  // Get the closest row of the button
+            row.remove();  // Remove the row from the table
+        });
+    });
+
     // Validate the form on Next button click
     document.getElementById('nextButton').addEventListener('click', function () {
-        let isValid = true;
+        if (currentStep < totalSteps) {
+            let isValid = true;
 
-        // Step 2 Validation
-        if (currentStep === 2) {
-            // Validate Recipient's Name
-            const name = document.getElementById("name");
-            const nameError = document.getElementById("name-error");
-            if (name.value.trim() === "") {
-                nameError.textContent = "Recipient's Name is required";
-                name.classList.add("is-invalid");
-                isValid = false;
-            } else {
-                nameError.textContent = "";
-                name.classList.remove("is-invalid");
-                name.classList.add("is-valid");
+            // Step 2 Validation
+            if (currentStep === 2) {
+                // Validate Recipient's Name
+                const name = document.getElementById("name");
+                const nameError = document.getElementById("name-error");
+                if (name.value.trim() === "") {
+                    nameError.textContent = "Recipient's Name is required";
+                    name.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    nameError.textContent = "";
+                    name.classList.remove("is-invalid");
+                    name.classList.add("is-valid");
+                }
+
+                // Validate Street Address
+                const street = document.getElementById("street");
+                const streetError = document.getElementById("street-error");
+                if (street.value.trim() === "") {
+                    streetError.textContent = "Street Address is required";
+                    street.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    streetError.textContent = "";
+                    street.classList.remove("is-invalid");
+                    street.classList.add("is-valid");
+                }
+
+                // Validate City, Zip Code, Phone Number (in one row)
+                const city = document.getElementById("city");
+                const cityError = document.getElementById("city-error");
+                if (city.value.trim() === "") {
+                    cityError.textContent = "City is required";
+                    city.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    cityError.textContent = "";
+                    city.classList.remove("is-invalid");
+                    city.classList.add("is-valid");
+                }
+
+                const zipcode = document.getElementById("zipcode");
+                const zipcodeError = document.getElementById("zipcode-error");
+                if (zipcode.value.trim() === "") {
+                    zipcodeError.textContent = "Zip Code is required";
+                    zipcode.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    zipcodeError.textContent = "";
+                    zipcode.classList.remove("is-invalid");
+                    zipcode.classList.add("is-valid");
+                }
+
+                const phone = document.getElementById("phone");
+                const phoneError = document.getElementById("phone-error");
+                const phonePattern = /^\d{3}[\-]?\d{3}[\-]?\d{4}$/;
+                if (!phone.value.match(phonePattern)) {
+                    phoneError.textContent = "Please enter a valid phone number";
+                    phone.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    phoneError.textContent = "";
+                    phone.classList.remove("is-invalid");
+                    phone.classList.add("is-valid");
+                }
+
+                // Validate Email
+                const email = document.getElementById("email");
+                const emailError = document.getElementById("email-error");
+                if (email.value.trim() === "") {
+                    emailError.textContent = "Email Address is required";
+                    email.classList.add("is-invalid");
+                    isValid = false;
+                } else {
+                    emailError.textContent = "";
+                    email.classList.remove("is-invalid");
+                    email.classList.add("is-valid");
+                }
             }
 
-            // Validate Street Address
-            const street = document.getElementById("street");
-            const streetError = document.getElementById("street-error");
-            if (street.value.trim() === "") {
-                streetError.textContent = "Street Address is required";
-                street.classList.add("is-invalid");
-                isValid = false;
-            } else {
-                streetError.textContent = "";
-                street.classList.remove("is-invalid");
-                street.classList.add("is-valid");
+            // Step 3 Validation
+            if (currentStep === 3) {
+                // Validate Credit Card
+                const creditCard = document.getElementById("creditCard");
+                if (creditCard.value.trim() === "") {
+                    showToast("Credit Card Number is required.");
+                    creditCard.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    creditCard.classList.remove('is-invalid');
+                    creditCard.classList.add('is-valid');
+                }
+
+                // Validate CVV
+                const cvv = document.getElementById("cvv");
+                if (cvv.value.trim() === "") {
+                    showToast("CVV is required.");
+                    cvv.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    cvv.classList.remove('is-invalid');
+                    cvv.classList.add('is-valid');
+                }
+
+                // Validate Expiry Date
+                const expiryDate = document.getElementById("expiryDate");
+                if (expiryDate.value.trim() === "") {
+                    showToast("Expiry Date is required.");
+                    expiryDate.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    expiryDate.classList.remove('is-invalid');
+                    expiryDate.classList.add('is-valid');
+                }
             }
 
-            // Validate City, Zip Code, Phone Number (in one row)
-            const city = document.getElementById("city");
-            const cityError = document.getElementById("city-error");
-            if (city.value.trim() === "") {
-                cityError.textContent = "City is required";
-                city.classList.add("is-invalid");
-                isValid = false;
+            // If the form is valid, proceed to the next step
+            if (isValid) {
+                currentStep++;
+                updateFormStep();
+                updateProgressBar();
             } else {
-                cityError.textContent = "";
-                city.classList.remove("is-invalid");
-                city.classList.add("is-valid");
+                showToast("Please fill in all required fields correctly.");
             }
-
-            const zipcode = document.getElementById("zipcode");
-            const zipcodeError = document.getElementById("zipcode-error");
-            if (zipcode.value.trim() === "") {
-                zipcodeError.textContent = "Zip Code is required";
-                zipcode.classList.add("is-invalid");
-                isValid = false;
+        } else if (currentStep === totalSteps) {
+            // Step 4: Submit the form after confirming
+            const confirmationCheckbox = document.getElementById('confirmationCheckbox');
+            if (!confirmationCheckbox.checked) {
+                showToast("You must confirm that all information is correct before submitting.");
             } else {
-                zipcodeError.textContent = "";
-                zipcode.classList.remove("is-invalid");
-                zipcode.classList.add("is-valid");
+                // If confirmed, redirect to Google
+                window.location.href = "https://www.google.com";  // Jump to Google when finish
             }
-
-            const phone = document.getElementById("phone");
-            const phoneError = document.getElementById("phone-error");
-            const phonePattern = /^\d{3}[\-]?\d{3}[\-]?\d{4}$/;
-            if (!phone.value.match(phonePattern)) {
-                phoneError.textContent = "Please enter a valid phone number";
-                phone.classList.add("is-invalid");
-                isValid = false;
-            } else {
-                phoneError.textContent = "";
-                phone.classList.remove("is-invalid");
-                phone.classList.add("is-valid");
-            }
-
-            // Validate Email
-            const email = document.getElementById("email");
-            const emailError = document.getElementById("email-error");
-            if (email.value.trim() === "") {
-                emailError.textContent = "Email Address is required";
-                email.classList.add("is-invalid");
-                isValid = false;
-            } else {
-                emailError.textContent = "";
-                email.classList.remove("is-invalid");
-                email.classList.add("is-valid");
-            }
-        }
-
-        // Step 3 Validation
-        if (currentStep === 3) {
-            // Validate Credit Card
-            const creditCard = document.getElementById("creditCard");
-            if (creditCard.value.trim() === "") {
-                showToast("Credit Card Number is required.");
-                creditCard.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                creditCard.classList.remove('is-invalid');
-                creditCard.classList.add('is-valid');
-            }
-
-            // Validate CVV
-            const cvv = document.getElementById("cvv");
-            if (cvv.value.trim() === "") {
-                showToast("CVV is required.");
-                cvv.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                cvv.classList.remove('is-invalid');
-                cvv.classList.add('is-valid');
-            }
-
-            // Validate Expiry Date
-            const expiryDate = document.getElementById("expiryDate");
-            if (expiryDate.value.trim() === "") {
-                showToast("Expiry Date is required.");
-                expiryDate.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                expiryDate.classList.remove('is-invalid');
-                expiryDate.classList.add('is-valid');
-            }
-        }
-
-        // If the form is valid, proceed to the next step
-        if (isValid) {
-            currentStep++;
-            updateFormStep();
-            updateProgressBar();
-        } else {
-            showToast("Please fill in all required fields correctly.");
         }
     });
 
@@ -203,9 +223,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (currentStep === totalSteps) {
-            document.getElementById('nextButton').textContent = 'Check Out';
+            document.getElementById('nextButton').textContent = 'Submit'; // Change button text to 'Submit' on Step 4
         } else {
-            document.getElementById('nextButton').textContent = 'Next';
+            document.getElementById('nextButton').textContent = 'Next'; // Default text for other steps
         }
     }
 
