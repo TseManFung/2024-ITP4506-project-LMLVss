@@ -1,56 +1,3 @@
-function resetActive(event, percent, step) {
-  $(".progress-bar")
-    .css("width", percent + "%")
-    .attr("aria-valuenow", percent);
-  $(".progress-completed").text(percent + "%");
-
-  $("div").each(function () {
-    if ($(this).hasClass("activestep")) {
-      $(this).removeClass("activestep");
-    }
-  });
-
-  if (event.target.className == "col-md-2") {
-    $(event.target).addClass("activestep");
-  } else {
-    $(event.target.parentNode).addClass("activestep");
-  }
-
-  hideSteps();
-  showCurrentStepInfo(step);
-  nextBTN(parseInt(step.replace("step-", "")));
-}
-
-function nextBTN(next) {
-  const btn_next = $("#btn-next");
-  const fin = btn_next.attr("fin");
-  if (next > fin) {
-    return;
-  }
-  text = "";
-  if (fin == next) {
-    text = btn_next.attr("fin-text");
-  } else {
-    text = btn_next.attr("pre-text");
-  }
-  btn_next.text(text);
-  btn_next.attr("curr", next);
-}
-
-function hideSteps() {
-  $("div").each(function () {
-    if ($(this).hasClass("activeStepInfo")) {
-      $(this).removeClass("activeStepInfo");
-      $(this).addClass("hiddenStepInfo");
-    }
-  });
-}
-
-function showCurrentStepInfo(step) {
-  var id = "#" + step;
-  $(id).addClass("activeStepInfo");
-}
-
 function driver_box_formatter(driverNum) {
   return `<div class="driver-box" id="driver${driverNum}" data-driver="${driverNum}"><h5 class="underline">Car Owner / Named Driver ${driverNum} Information</h5><div id="d${driverNum}_personal_information"><div class="row"><div class="col m-1"><div class="form-floating"><input type="text" class="form-control" id="d${driverNum}_FirstName" placeholder="First Name in english"><label for="d${driverNum}_FirstName">First Name in english</label></div></div><div class="col m-1"><div class="form-floating"><input type="text" class="form-control" id="d${driverNum}_LastName" placeholder="Last Name in english"><label for="d${driverNum}_LastName">Last Name in english</label></div></div></div><div class="row"><div class="col m-1"><div class="form-floating"><input type="text" class="form-control" id="d${driverNum}_CnName" placeholder="Chinese Name"><label for="d${driverNum}_CnName">Chinese Name</label></div></div></div><div class="row"><div class="col m-1"><div class="form-floating"><input type="date" class="form-control" id="d${driverNum}_DoB" placeholder="Date of Birth"><label for="d${driverNum}_DoB">Date of Birth</label></div></div><div class="col m-1"><div class="form-floating"><select class="form-select" id="d${driverNum}_gender"><option selected value="">Select a gender</option><option value="M">Male</option><option value="F">Female</option><option value="O">Other</option></select><label for="d${driverNum}_gender">Gender</label></div></div></div><div class="row"><div class="col m-1"><div class="input-group"><button class="btn btn-outline-secondary dropdown-toggle" type="button"data-bs-toggle="dropdown" aria-expanded="false"id="d${driverNum}_dropdownID">HKID</button><ul class="dropdown-menu"><li><div class="dropdown-item cursor-pointer" name="ID_card">HKID</div></li><li><div class="dropdown-item cursor-pointer" name="ID_card">Visa ID</div></li></ul><div class="form-floating"><input type="password" class="form-control" id="d${driverNum}_inputID" placeholder="HKID" autocomplete="off"><label for="d${driverNum}_inputID" id="d${driverNum}_labelID">HKID</label></div></div></div></div><br><h5 class="underline">Content</h5><div class="row"><div class="col m-1"><div class="form-floating"><input type="email" class="form-control" id="d${driverNum}_email" placeholder="Email"><label for="d${driverNum}_email">Email</label></div></div></div><div class="row"><div class="col m-1"><div class="form-floating"><input type="d${driverNum}_tel" class="form-control" id="d${driverNum}_tel" placeholder="Phone number"><label for="d${driverNum}_tel">Phone number</label></div></div></div></div><br><h5 class="underline">Driver information</h5><div class="row"><div class="col m-1"><div class="form-floating"><select class="form-select" id="d${driverNum}_marry"><option selected value="S">Single</option><option value="M">Married</option><option value="D">Divorced</option><option value="W">Widowed</option></select><label for="d${driverNum}_marry">Marriage status</label></div></div><div class="col m-1"><div class="form-floating"><input type="number" class="form-control" id="d${driverNum}_drive_year" placeholder="Driving Years" step="1" min="0"><label for="d${driverNum}_drive_year">Driving Years</label></div></div></div></div>`;
 }
@@ -64,6 +11,18 @@ $(document).ready(() => {
     dropdownID.text(t);
     inputID.attr("placeholder", t);
     labelID.text(t);
+  });
+
+  $("#CarBrand").on("change", (e) => {
+    const brand = $("#CarBrand").val();
+    const CarModal = $("#CarModal");
+    if (brand === "") {
+      CarModal.html("<option value='' select>Select Car Modal</option>");
+      CarModal.prop("disabled", true);
+      return;
+    }
+    CarModal.prop("disabled", false);
+    CarModal.load(`../API/getCarModel/${brand}.html`);
   });
 
   const btn_next = $("#btn-next");
@@ -158,11 +117,10 @@ $(document).ready(() => {
       if (event.data) {
         $("#openPayment").hide();
         $("#pay-status").addClass("success");
-        $("#pay-status").text("Payment Success");
+        $("#pay-status").text(`Payment Success, you pay by ${event.data}`);
       } else {
         $("#pay-status").addClass("fail");
         $("#pay-status").text("Payment Failed");
-
       }
     });
   });

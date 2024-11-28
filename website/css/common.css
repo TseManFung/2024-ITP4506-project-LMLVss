@@ -28,8 +28,9 @@ html {
 }
 
 body {
-  background: url(../images/common/bg.jpg) no-repeat top center fixed;
-  background-size: cover;
+  /*   background: url(../images/common/bg.jpg) no-repeat top center fixed;
+  background-size: cover; */
+  background: linear-gradient(60deg, skyblue 0%, aliceblue 50%, skyblue 100%) !important;
 }
 .space-wrap {
   padding: 10% 20% 10% 20%;
@@ -217,9 +218,6 @@ h3 {
 }
 footer {
   text-align: center;
-
-
-
 
   color: #000;
 }
@@ -414,9 +412,9 @@ footer ul.sns li img {
         }
       }
     }
-    &.space{
-    justify-content: space-between;
-    flex-direction: column;
+    &.space {
+      justify-content: space-between;
+      flex-direction: column;
     }
   }
 
