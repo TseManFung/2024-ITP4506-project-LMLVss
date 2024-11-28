@@ -30,7 +30,7 @@ html {
 body {
   /*   background: url(../images/common/bg.jpg) no-repeat top center fixed;
   background-size: cover; */
-  background: linear-gradient(60deg, skyblue 0%, aliceblue 50%, skyblue 100%) !important;
+  background: linear-gradient(50deg, skyblue 0%, rgb(196, 225, 252) 50%, skyblue 100%) !important;
 }
 .space-wrap {
   padding: 10% 20% 10% 20%;

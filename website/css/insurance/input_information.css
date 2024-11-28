@@ -154,6 +154,8 @@
 
 #file-list {
   & li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     position: relative;
     font-size: 1.5rem;
     &:hover {
