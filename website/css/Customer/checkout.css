@@ -19,3 +19,8 @@ body{
   #whatsapp img {
     width: 150%;
   }
+
+  /* Ensure the footer is pushed to the bottom */
+.footer1 {
+    margin-top: auto; /* Push footer to the bottom of the page */
+  }
