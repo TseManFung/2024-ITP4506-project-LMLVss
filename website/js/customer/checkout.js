@@ -178,8 +178,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (currentStep === totalSteps) {
             // Step 4: Submit the form after confirming
             const confirmationCheckbox = document.getElementById('confirmationCheckbox');
+            
             if (!confirmationCheckbox.checked) {
                 showToast("You must confirm that all information is correct before submitting.");
+                confirmationCheckboxtext.classList.add('is-invalid');
+                document.getElementById('confirmationCheckboxtext').classList.add('is-invalid');
             } else {
                 // If confirmed, redirect to Google
                 window.location.href = "https://www.google.com";  // Jump to Google when finish
