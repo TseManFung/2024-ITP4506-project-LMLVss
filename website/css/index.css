@@ -72,7 +72,7 @@ body {
 
 
 .third-wrapper .right-side-wrapper .right-side-container {
-    background-image: url("/website/images/indexPage/insurance_waifu2x_art_noise1.png");
+    background-image: url("/website/images/indexPage/insurance.avif");
     background-color: #fbfbfd;
     background-position: bottom;
     padding-top: 35px;
@@ -83,7 +83,7 @@ body {
 
 .left-side-container,
 .right-side-container {
-    min-height: 515px;
+    min-height: 450px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,6 +103,7 @@ body {
 
 .third-wrapper .description-wraper{
     text-align: center;
+    color:rgb(221, 221, 221);
 }
 
 .third-wrapper .links-wrapper {
@@ -140,10 +141,11 @@ body {
     font-size: 21px;
 }
 
-.links-wrapper ul li a:hover {
+
+
+.fourth-wrapper .links-wrapper{
     color: black;
 }
-
 .links-wrapper ul li a:after {
     font-family: "FontAwesome";
     font-weight: 900;
@@ -192,13 +194,20 @@ body {
 
 .index_first_banner .index_first_banner_text button {
     padding: 10px 20px;
-    background-color: white;
-    color: grey;
+    background-color: rgb(255, 255, 255,0.8);
+    color: black;
     border: none;
     border-radius: 10px;
     font-size: 1.2rem;
     cursor: pointer;
 }
+.index_first_banner .index_first_banner_text button:hover {
+    background-color: rgba(200, 200, 200, 0.8); 
+    color: black; 
+}
+
+
+
 
 header ul li a .header-mid {
     justify-content: center !important;

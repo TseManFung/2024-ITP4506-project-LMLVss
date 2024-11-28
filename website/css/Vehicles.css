@@ -1,0 +1,107 @@
+body{
+    background-color: white !important;
+    background-image: none !important;
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .color-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .color-circle.selected {
+    border-color: black;
+  }
+  
+  .badge {
+    background-color: red;
+    color: white;
+    float: right;
+    padding: 0.2em 0.5em;
+    border-radius: 0.25em;
+  }
+
+  .accordion-body {
+    max-height: 200px; 
+    overflow-y: auto;
+  }
+
+  .item-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .item.box {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item-info {
+    width: 100%;
+    height: auto; 
+  }
+
+  .item-wrap .btnaddToCart{
+    background: rgb(238, 74, 74);    color: white;
+    border: 25px;
+  }
+
+  .item-wrap .btnShowDeatil{
+    color: red;
+  }
+  .item-wrap .btnaddToCart:hover{
+    background: red;
+    color: white;
+    border: 2px ;
+  }
+  .item-wrap .btnShowDeatil:hover{
+    background: rgb(231, 78, 78);
+    color: white;
+
+  }
+
+.item-wrap.cell .item-name{
+  display:none;
+}
+
+.item-wrap.cell .item-info {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.item-wrap.cell .item-info hr {
+  width: 120%; 
+  margin: 10px auto; 
+}
+
+.item-wrap.cell .item-data {
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.item-wrap.cell .item-data p {
+  margin: 0 auto; 
+}
+
+.item-wrap.cell .item-image{
+  margin-left: -10px;
+}
+
+.item-wrawp.cell button{
+  z-index: 3;
+}
