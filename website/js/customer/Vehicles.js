@@ -47,18 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (getCookie("itemsView") === "cell") {
       itemsSetCell();
-          $("#toggleDiv").toggle(); // 切換顯示和隱藏
-
     } else {
       itemsSetList();
     }
 
-    $("#cell-icon").on("click", () => {
-      itemsSetCell();
-      $("#toggleDiv").toggle(); 
-
-    });
-    $("#list-icon").on("click", () => {
-      itemsSetList();
-    });
+    
+  $("#cell-icon").on("click", () => {
+    itemsSetCell();
   });
+  $("#list-icon").on("click", () => {
+    itemsSetList();
+  });
+  });
+
+  
