@@ -4,6 +4,14 @@
         script.src = "/website/js/common.js";
         document.head.appendChild(script);
     }
+
+    //load css
+    if (!document.querySelector('link[href*="whatsapp.css"]')) {
+        var link = document.createElement('link');
+        link.href = "/website/css/Customer/whatsapp.css";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
