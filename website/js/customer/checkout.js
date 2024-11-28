@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentStep = 1;
     const totalSteps = 4;
 
-    const form = document.getElementById("address-form");
-
     // Helper function to show error messages using Toast
     function showToast(message) {
         const toastBody = document.getElementById("toastBody");
@@ -12,12 +10,39 @@ document.addEventListener("DOMContentLoaded", function () {
         toast.show();
     }
 
+    // Handle showing or hiding billing address form based on checkbox
+    const billingCheckbox = document.getElementById('billingAddress');
+    const billingForm = document.getElementById('billingAddressForm');
+
+    // Listen for changes to the checkbox
+    billingCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            billingForm.setAttribute('hidden', 'true');  // Hide billing address form
+        } else {
+            billingForm.removeAttribute('hidden');  // Show billing address form
+        }
+    });
+
+    // Real-time validation on input blur
+    const inputs = document.querySelectorAll('#billform input, #billform select, #address-form input');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function () {
+            if (input.checkValidity()) {
+                input.classList.add('is-valid');
+                input.classList.remove('is-invalid');
+            } else {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+            }
+        });
+    });
+
     // Validate the form on Next button click
     document.getElementById('nextButton').addEventListener('click', function () {
-        if (currentStep === 2) {
-            // Step 2 validation logic
-            let isValid = true;
+        let isValid = true;
 
+        // Step 2 Validation
+        if (currentStep === 2) {
             // Validate Recipient's Name
             const name = document.getElementById("name");
             const nameError = document.getElementById("name-error");
@@ -28,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 nameError.textContent = "";
                 name.classList.remove("is-invalid");
+                name.classList.add("is-valid");
             }
 
             // Validate Street Address
@@ -40,9 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 streetError.textContent = "";
                 street.classList.remove("is-invalid");
+                street.classList.add("is-valid");
             }
 
-            // Validate City
+            // Validate City, Zip Code, Phone Number (in one row)
             const city = document.getElementById("city");
             const cityError = document.getElementById("city-error");
             if (city.value.trim() === "") {
@@ -52,9 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 cityError.textContent = "";
                 city.classList.remove("is-invalid");
+                city.classList.add("is-valid");
             }
 
-            // Validate Zip Code
             const zipcode = document.getElementById("zipcode");
             const zipcodeError = document.getElementById("zipcode-error");
             if (zipcode.value.trim() === "") {
@@ -64,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 zipcodeError.textContent = "";
                 zipcode.classList.remove("is-invalid");
+                zipcode.classList.add("is-valid");
             }
 
-            // Validate Phone Number
             const phone = document.getElementById("phone");
             const phoneError = document.getElementById("phone-error");
             const phonePattern = /^\d{3}[\-]?\d{3}[\-]?\d{4}$/;
@@ -77,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 phoneError.textContent = "";
                 phone.classList.remove("is-invalid");
+                phone.classList.add("is-valid");
             }
 
             // Validate Email
@@ -89,21 +117,53 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 emailError.textContent = "";
                 email.classList.remove("is-invalid");
+                email.classList.add("is-valid");
+            }
+        }
+
+        // Step 3 Validation
+        if (currentStep === 3) {
+            // Validate Credit Card
+            const creditCard = document.getElementById("creditCard");
+            if (creditCard.value.trim() === "") {
+                showToast("Credit Card Number is required.");
+                creditCard.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                creditCard.classList.remove('is-invalid');
+                creditCard.classList.add('is-valid');
             }
 
-            // If the form is valid, proceed to the next step
-            if (isValid) {
-                currentStep++;
-                updateFormStep();
-                updateProgressBar();
+            // Validate CVV
+            const cvv = document.getElementById("cvv");
+            if (cvv.value.trim() === "") {
+                showToast("CVV is required.");
+                cvv.classList.add('is-invalid');
+                isValid = false;
             } else {
-                showToast("Please fill in all required fields correctly.");
+                cvv.classList.remove('is-invalid');
+                cvv.classList.add('is-valid');
             }
-        } else if (currentStep < totalSteps) {
-            // Move to the next step if it's not step 2
+
+            // Validate Expiry Date
+            const expiryDate = document.getElementById("expiryDate");
+            if (expiryDate.value.trim() === "") {
+                showToast("Expiry Date is required.");
+                expiryDate.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                expiryDate.classList.remove('is-invalid');
+                expiryDate.classList.add('is-valid');
+            }
+        }
+
+        // If the form is valid, proceed to the next step
+        if (isValid) {
             currentStep++;
             updateFormStep();
             updateProgressBar();
+        } else {
+            showToast("Please fill in all required fields correctly.");
         }
     });
 
@@ -119,11 +179,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update the progress bar based on current step
     function updateProgressBar() {
         const progressPercentage = (currentStep / totalSteps) * 100;
-        let progressBar = document.getElementById('formProgressBar');
+        const progressBar = document.getElementById('formProgressBar');
         progressBar.setAttribute('aria-valuenow', progressPercentage);
         progressBar.style.width = progressPercentage + '%';
         progressBar.textContent = Math.round(progressPercentage) + '%';
-
         if (progressPercentage === 100) {
             progressBar.textContent = 'Finish';
         }
