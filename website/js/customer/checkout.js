@@ -213,6 +213,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update the form to show the current step
     function updateFormStep() {
+        if(currentStep === 1) {
+            //hide the back button on the first step
+            document.getElementById('backButton').style.display = 'none';
+        } else {
+            document.getElementById('backButton').style.display = 'block';
+        }
+        
         for (let i = 1; i <= totalSteps; i++) {
             document.getElementById(`step${i}`).style.display = 'none';
         }

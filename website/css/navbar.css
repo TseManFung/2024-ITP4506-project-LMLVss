@@ -147,30 +147,4 @@ body {
   color: #6394f8;
 }
 
-nav {
-  padding: 20px 0 40px 0;
-  background: #f8f8f8;
-  font-size: 16px;
 
-  .navbar-left {
-    float: left;
-  }
-
-  .navbar-right {
-    float: right;
-  }
-  ul {
-    li {
-      display: inline;
-      padding-left: 20px;
-      a {
-        color: #777777;
-        text-decoration: none;
-
-        &:hover {
-          color: black;
-        }
-      }
-    }
-  }
-}
