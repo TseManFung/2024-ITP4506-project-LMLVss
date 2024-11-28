@@ -9,7 +9,7 @@ body{
     min-height: 100vh;
     background-color: white;
 }
-header{
+#header{
     position: fixed;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@ header{
     transition: 0.6s ease-out;
 }
 
-header .logo{
+#header .logo{
     font-size: 32px;
     color: black;
     font-weight: 700;
@@ -32,17 +32,17 @@ header .logo{
     transition: 0.6s;
 }
 
-header ul{
+#header #navbar-ul{
     display: flex;
     justify-content: center !important;
     align-items: center !important;
      /* remove boostrap margin bottom  */
     margin-bottom: 0px !important;
 }
-header ul li{
+#header #navbar-ul #navbar-item{
     list-style: none;
 }
-header ul li a{
+#header #navbar-ul #navbar-item a{
     margin: 0 15px;
     text-decoration: none;
     color: black;
@@ -53,8 +53,8 @@ header ul li a{
 
 
 
-header.sticky .logo,
-header.sticky ul li a{
+#header.sticky .logo,
+#header.sticky #navbar-ul #navbar-item a{
     color: white;
 }
 
@@ -66,12 +66,12 @@ header.sticky ul li a{
 }
 
 @media (min-width:768px) {
-    header.sticky{
+    #header.sticky{
         padding: 6px 100px;
         background-color: black;
         transition: 0.6s ease-out;
     }
-    header.active{
+    #header.active{
         justify-content: flex-start;
         height: 100lvh;
     
@@ -82,32 +82,32 @@ header.sticky ul li a{
 /* Media query for responsiveness */
 @media (max-width: 768px) {
     
-    header {
+    #header {
         padding: 20px;
         flex-direction: column;
     }
-    header.sticky.active{
+    #header.sticky.active{
         justify-content: flex-start;
         height: 100lvh;
         background-color: rgba(255,255,255,0.8);
 
     }
 
-    header .logo {
+    #header .logo {
         font-size: 24px;
     }
 
-    header ul {
+    #header #navbar-ul {
         display: none; /* Hide the menu initially */
         flex-direction: column;
         width: 100%;
     }
 
-    header ul li {
+    #header #navbar-ul #navbar-item {
         margin: 10px 0;
     }
 
-    header ul li a {
+    #header #navbar-ul #navbar-item a {
         font-size: 18px;
     }
 
@@ -132,7 +132,7 @@ header.sticky ul li a{
 /* When the menu is open (toggle) */
 
 
-header.active ul {
+#header.active #navbar-ul {
     display: flex;
 
     
