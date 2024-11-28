@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (currentStep === totalSteps) {
-            document.getElementById('nextButton').textContent = 'Submit';
+            document.getElementById('nextButton').textContent = 'Check Out';
         } else {
             document.getElementById('nextButton').textContent = 'Next';
         }

@@ -224,19 +224,20 @@
                 <!-- Check if the billing address is the same as the shipping address -->
                 <input type="checkbox" id="billingAddress" checked>
                 <label for="billingAddress">Same as billing address</label>
-          
+
                 <!-- The billing address form, initially hidden if checked -->
                 <div class="hidden-form" id="billingAddressForm" hidden>
                   <!-- Billing Address Fields -->
                   <div class="row">
                     <div class="col-md-4">
                       <label for="name">Recipient's Name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="e.g., John Doe" required>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="e.g., John Doe"
+                        required>
                       <div class="invalid-feedback" id="name-error"></div>
                     </div>
-                    
-                   
-          
+
+
+
                     <div class="col-md-4">
                       <label for="unit">Unit/Apartment Number (Optional)</label>
                       <input type="text" class="form-control" id="unit" name="unit" placeholder="e.g., Apt 3B">
@@ -246,7 +247,8 @@
                   <div class="row">
                     <div class="col-md-12">
                       <label for="street">Street Address</label>
-                      <input type="text" class="form-control" id="street" name="street" placeholder="e.g., 123 Main St" required>
+                      <input type="text" class="form-control" id="street" name="street" placeholder="e.g., 123 Main St"
+                        required>
                       <div class="invalid-feedback" id="street-error"></div>
                     </div>
                   </div>
@@ -254,28 +256,30 @@
                   <div class="row">
                     <div class="col-md-4">
                       <label for="city">City</label>
-                      <input type="text" class="form-control" id="city" name="city" placeholder="e.g., New York" required>
+                      <input type="text" class="form-control" id="city" name="city" placeholder="e.g., New York"
+                        required>
                       <div class="invalid-feedback" id="city-error"></div>
                     </div>
-          
+
                     <div class="col-md-4">
                       <label for="zipcode">Zip Code</label>
-                      <input type="number" class="form-control" id="zipcode" name="zipcode" placeholder="e.g., 10001" required>
+                      <input type="number" class="form-control" id="zipcode" name="zipcode" placeholder="e.g., 10001"
+                        required>
                       <div class="invalid-feedback" id="zipcode-error"></div>
                     </div>
-          
+
                     <div class="col-md-4">
                       <label for="phone">Phone Number</label>
-                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g., 123-456-7890" required
-                        pattern="^\d{3}[\-]?\d{3}[\-]?\d{4}$">
+                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g., 123-456-7890"
+                        required pattern="^\d{3}[\-]?\d{3}[\-]?\d{4}$">
                       <div class="invalid-feedback" id="phone-error"></div>
                     </div>
                   </div>
                 </div>
               </div>
-          
+
               <!-- Payment Information -->
-          
+
               <div class="row">
                 <div class="col-md-8">
                   <label for="creditCard" class="form-label">Credit Card</label>
@@ -283,7 +287,7 @@
                   <div class="invalid-feedback">Please provide a valid credit card number.</div>
                 </div>
               </div>
-          
+
               <!-- CVV and Expiry Date in one row -->
               <div class="row">
                 <div class="col-md-4">
@@ -291,14 +295,14 @@
                   <input type="text" class="form-control" id="cvv" required>
                   <div class="invalid-feedback">Please provide a valid CVV.</div>
                 </div>
-          
+
                 <div class="col-md-4">
                   <label for="expiryDate" class="form-label">Expiry Date</label>
                   <input type="text" class="form-control" id="expiryDate" required>
                   <div class="invalid-feedback">Please provide a valid expiry date.</div>
                 </div>
               </div>
-          
+
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                 <label class="form-check-label" for="agreeTerms">Agree to terms and conditions</label>
@@ -306,15 +310,119 @@
               </div>
             </form>
           </div>
-          
+
 
 
 
           <div id="step4" class="form-step" style="display: none;">
             <h3>Step 4: Review & Submit</h3>
             <form>
-              <p>Please review your information before submitting.</p>
+              <h1>Thank you for your order, Sam</h1>
+              <p>A confirmation email will be sent to you at SamYau@stu.vtc.edu.hk with your Completer order details</p>
               <!-- Here you can show a summary of all previous fields -->
+            </form>
+            <form class="needs-validation" novalidate method="POST" id="checkout-form">
+
+              <div class="row">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+
+                      </th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                      <td><img src="/website/images/Vehicles/Car1.avif" style="width: 50px; height: 50px;">
+                      </td>
+                      <td>2023 CHALLENGER R/T SCAT PACKs
+                      </td>
+                      <td>
+                        <p class="d-flex justify-content-center m-0">1</p>
+                      </td>
+                      <td>$57,435.00</td>
+                      <td> <button type="button" class="btn btn-outline-danger">Remove</button> </td>
+                    </tr>
+                    <tr>
+                      <td><img src="/website/images/Vehicles/Car2.avif" style="width: 50px; height: 50px;">
+                      </td>
+                      <td>2027 CHALLENGER R/T SCAT PACK
+                      </td>
+                      <td>
+                        <p class="d-flex justify-content-center m-0">1</p>
+                      </td>
+                      <td>$131,600.00</td>
+                      <td> <button type="button" class="btn btn-outline-danger">Remove</button> </td>
+                    </tr>
+                    <tr>
+                      <td><img src="/website/images/Vehicles/Car3.avif" style="width: 50px; height: 50px;">
+                      </td>
+
+                      <td>2026 CHALLENGER R/T SCAT PACK </td>
+                      <td>
+                        <p class="d-flex justify-content-center m-0">1</p>
+                      </td>
+                      <td>$99,999.00</td>
+                      <td> <button type="button" class="btn btn-outline-danger">Remove</button> </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="border p-3">
+                <div class="row">
+
+                  <h2>Address Information</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>Recipient's Name: Sam Yau</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>Street Address: 123 Main St</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>City: New York</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>Phone Number:12345678</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>Zip Code:10001 </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <p>Email Address:SamYau@stu.vtc.edu.hk</p>
+                </div>
+              </div>
+              <div class="border p-3">
+                <div class="row">
+                  <h2>Billing Information</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>Recipient's Name: Sam Yau</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>Street Address: 123 Main St</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>City: New York</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <p>Phone Number:12345678</p>
+                  </div>
+                  <div class="col-md-4">
+                    <p>Zip Code:10001 </p>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
 
