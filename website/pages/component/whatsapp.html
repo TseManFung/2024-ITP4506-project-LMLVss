@@ -1,4 +1,3 @@
-
 <script>
     if (!document.querySelector('script[src*="common.js"]')) {
         var script = document.createElement('script');
@@ -6,17 +5,17 @@
         document.head.appendChild(script);
     }
 </script>
-    
-    <a aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp" src="/website/images/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" />
-        </a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<a aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp"
+         src="/website/images/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" />
+</a>
 
 <script>
-    $(document).ready(function(){
-        readJsonFile("/website/whatsapp.json", function(data){
-            const message = String.format(data.text, "Sam","Yau");
+    $(document).ready(function () {
+        readJsonFile("/website/whatsapp.json", function (data) {
+            const message = String.format(data.text, "Sam", "Yau");
             $("a").attr("href", String.format(data.link, data.phone, message));
-
         });
-
     });
 </script>
