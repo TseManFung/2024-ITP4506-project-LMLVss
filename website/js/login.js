@@ -57,20 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
             return
           }
           window.location.href = "./customer/";
+          return;
         } else if (account === "V") {
           if(urlParams.has("redirect")){
             window.location.href = "./" + urlParams.get("redirect");
             return
           }
           window.location.href = "./vehicle/";
+          return;
         } else if (account === "I") {
           if(urlParams.has("redirect")){
             window.location.href = "./" + urlParams.get("redirect");
             return
           }
           window.location.href = "./insurance/";
+          return;
         }
-        return;
       }
 
       modalSetPrimaryBtn((Show = false));
