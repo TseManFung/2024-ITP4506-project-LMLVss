@@ -3,6 +3,12 @@ function driver_box_formatter(driverNum) {
 }
 
 $(document).ready(() => {
+  $("form").on("submit", function (e) {
+    e.preventDefault();
+  })
+
+
+
   const dropdownID = "dropdownID";
   const inputID = "inputID";
   const labelID = "labelID";
@@ -16,6 +22,25 @@ $(document).ready(() => {
   function removeDriver(element) {
     driverId = element.getAttribute("data-id");
     $(`#driver${driverId}`).remove();
+  }
+
+  function checkAllStep() {
+    allSteps = $(".setup-content");
+    for (const index in allSteps) {
+      i = parseInt(index);
+      const element = allSteps[i];
+      if (!element.checkValidity()) {
+        $(element).addClass("was-validated");
+        $(`#step-label-${i + 1}`).click();
+        // get the first invalid element in the step after 0.5s
+        setTimeout(() => {
+          invalidElement = $(element).find(":invalid")[0];
+            invalidElement.scrollIntoView({ block: "center" });
+        });
+        return false;
+      }
+    }
+    return true;
   }
 
   function hkidOrVisaSelected(event) {
@@ -57,6 +82,9 @@ $(document).ready(() => {
       return;
     }
     if (curr == fin) {
+      if (!checkAllStep()) {
+        return;
+      }
       modalSetTitle("Submit Successfully");
       modalSetBody(
         'Your application has been submitted successfully. <br>Your application number is <span style="color:red;">ABC123456</span>.<br>This may take 3-5 working days to process.'

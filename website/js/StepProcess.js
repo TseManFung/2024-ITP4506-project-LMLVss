@@ -22,7 +22,11 @@ function resetActive(event, percent, step) {
 }
 
 function nextBTN(next) {
-  const btn_next = $("#btnNext");
+  if ($("#btnNext").length === 0) {
+    btn_next = $("#btn-next");
+  } else {
+    btn_next = $("#btnNext");
+  }
   const btn_reject = $("#btnReject");
   const fin = btn_next.attr("fin");
   if (next > fin) {
@@ -45,7 +49,7 @@ function nextBTN(next) {
 }
 
 function hideSteps() {
-  $(".step").each(function () {
+  $(".setup-content").each(function () {
     if ($(this).hasClass("activeStepInfo")) {
       $(this).removeClass("activeStepInfo");
       $(this).addClass("hiddenStepInfo");

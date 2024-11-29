@@ -2,7 +2,8 @@
 function scrollTo(elementID) {
   targetElement = document.getElementById(elementID);
 
-  targetElement.scrollIntoView();
+  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
 }
 
 function modalSetTitle(title) {

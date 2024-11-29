@@ -1,16 +1,18 @@
-
 <body>
     <header id="headerofnav">
         <i class="fas fa-bars menu-icon"></i> <!-- Hamburger menu icon -->
-        <a  href="/website/index.html" class = "logo" id="navbar-logo"><img src="/website/images/common/logo-icon.png" style="width: 100%; height: 8lvh;"> </a>
+        <a href="/website/index.html" class="logo" id="navbar-logo"><img src="/website/images/common/logo-icon.png"
+                 style="width: 100%; height: 8lvh;"> </a>
         <ul id="navbar-ul">
-            <li id="navbar-item"><a  href="/website/pages/customer/Vehicles.html">Vehicles</a></li>
+            <li id="navbar-item"><a href="/website/pages/customer/Vehicles.html">Vehicles</a></li>
             <li id="navbar-item"><a href="#">bcde</a></li>
             <li id="navbar-item"><a href="#">cdef</a></li>
             <li id="navbar-item"><a href="#">defg</a></li>
             <li id="navbar-item"><a href="#">efgi</a></li>
-            <li id="navbar-item"><a href="/website/pages/customer/UpdateInforPage.html"><i class="fa-solid fa-user "></i></a></li>
-            <li id="navbar-item"><a href="/website/pages/customer/checkout.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li id="navbar-item"><a href="/website/pages/customer/UpdateInforPage.html"><i
+                       class="fa-solid fa-user "></i></a></li>
+            <li id="navbar-item"><a href="/website/pages/customer/checkout.html"><i
+                       class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </header>
 </body>
@@ -21,3 +23,12 @@
 <link rel="stylesheet" href="/website/css/navbar.css">
 <!-- js -->
 <script src="/website/js/navbar.js"> </script>
+<script>
+    favicon = document.querySelector("link[rel~='icon']");
+    if (!favicon) {
+        favicon = document.createElement("link");
+        favicon.rel = "icon";
+        favicon.href = "/website/images/common/logo-icon.png";
+        document.head.appendChild(favicon);
+    }
+</script>
