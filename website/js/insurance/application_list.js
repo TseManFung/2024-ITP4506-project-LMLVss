@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".btn-primary").click(function(){
-        window.location.href = "./insurance_detail.html";
+        window.location.href = "./insurance_information.html";
     })
     $(".btn-danger").click(function(){
         modalSetTitle("Are you sure you want to terminate this insurance?");

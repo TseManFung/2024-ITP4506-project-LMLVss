@@ -22,7 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../../js/common.js"></script>
     <script src="../../js/StepProcess.js"></script>
-    <script src="../../js/InsuranceSale/insurance_information.js"></script>
+    <script src="../../js/Insurance/insurance_information.js"></script>
     <!-- /js -->
 </head>
 
@@ -169,9 +169,6 @@
                                            value="12345678">
                                     <label for="tel">Phone number</label>
                                 </div>
-                            </div>
-                            <div class="col m-1" id="whatsappIcon">
-
                             </div>
                         </div>
                         <br>
@@ -452,16 +449,19 @@
             <div class="row mt-5">
                 <div class="col d-grid gap-2 col-8 mx-auto" id="btnGrp">
                     <button class="btn btn-primary btn-lg" type="button" id="btnNext" curr="1" fin="6" pre-text="Next"
-                            fin-text="Accept">Next</button>
-                    <button class="btn btn-danger btn-lg" type="button" id="btnReject"
-                            style="display: none;">Reject</button>
+                            fin-text="Back">Next</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- /content -->
 
-
+    <div id="whatsapp">
+        <p>Need Help?</p>
+        <div class="whatsapp">
+    
+        </div>
+      </div>
 
     <!-- GoToTop -->
     <div id="page-top" style="">
@@ -473,9 +473,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script>$("#modal").load("../component/modal.html")</script>
-<script>$(".navbar1").load("../component/navbar.html", function () {$("#application-a").attr("href", "./application_manage.html")})</script>
+<script>$(".navbar1").load("../component/navbar.html", function () {$("#application-a").attr("href", "./application_list.html")})</script>
 <script>$("#page-top").before($("<footer>").load("../component/footer.html"))</script>
-<script>$("#whatsappIcon").load("../component/whatsapp.html")</script>
+    <script>$(".whatsapp").load("/website/pages/component/whatsapp.html");</script>
 
 </html>
 

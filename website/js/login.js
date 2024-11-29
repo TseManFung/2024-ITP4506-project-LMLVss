@@ -56,21 +56,21 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "./" + urlParams.get("redirect");
             return
           }
-          window.location.href = "./customer/";
+          window.location.href = "./customer/Vehicles.html";
           return;
         } else if (account === "V") {
           if(urlParams.has("redirect")){
             window.location.href = "./" + urlParams.get("redirect");
             return
           }
-          window.location.href = "./vehicle/";
+          window.location.href = "./vehicle/vehiclesSales.html";
           return;
         } else if (account === "I") {
           if(urlParams.has("redirect")){
             window.location.href = "./" + urlParams.get("redirect");
             return
           }
-          window.location.href = "./insurance/";
+          window.location.href = "./insuranceSale/application_manage.html";
           return;
         }
       }

@@ -189,7 +189,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script>$("#modal").load("../component/modal.html")</script>
-<script>$(".navbar1").load("../component/navbar.html")</script>
+<script>$(".navbar1").load("../component/navbar.html", function () {$("#application-a").attr("href", "./application_manage.html")})</script>
 <script>$("#page-top").before($("<footer>").load("../component/footer.html"))</script>
 
 </html>
