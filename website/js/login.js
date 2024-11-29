@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modalSetSecondaryBtn((Show = false));
         modelEnableStatic();
         modalSetCloseBtn((Show = false));
-        modalSetPrimaryBtn((Show = true, text = "OK", action = function () {
+        modalSetPrimaryBtn(Show = false, text = "OK", function () {
           setTimeout(function () {
             if(urlParams.has("redirect")){
               window.location.href = "./login.html?redirect=" + urlParams.get("redirect");
@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             window.location.href = "./login.html";
           }, 3000);
-          hideModal();
-        }));
+          modalSetBody("The page will be re-directed in three seconds. Please wait a moment...")
+        });
         showModal();
       }
 
