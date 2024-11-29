@@ -45,7 +45,7 @@ function nextBTN(next) {
 }
 
 function hideSteps() {
-  $("div").each(function () {
+  $(".step").each(function () {
     if ($(this).hasClass("activeStepInfo")) {
       $(this).removeClass("activeStepInfo");
       $(this).addClass("hiddenStepInfo");
