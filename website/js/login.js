@@ -199,10 +199,10 @@ document.addEventListener("DOMContentLoaded", function () {
         $("#btn-next").hide();
         modalSetTitle("sign up successful");
         modalSetBody(t);
-        modalSetSecondaryBtn((Show = false));
+        modalSetSecondaryBtn(false);
         modelEnableStatic();
-        modalSetCloseBtn((Show = false));
-        modalSetPrimaryBtn(Show = false, text = "OK", function () {
+        modalSetCloseBtn(false);
+        modalSetPrimaryBtn(Show = true, text = "OK", function () {
           setTimeout(function () {
             if(urlParams.has("redirect")){
               window.location.href = "./login.html?redirect=" + urlParams.get("redirect");
