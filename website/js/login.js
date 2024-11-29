@@ -203,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modelEnableStatic();
         modalSetCloseBtn(false);
         modalSetPrimaryBtn(Show = true, text = "OK", function () {
+          modalSetPrimaryBtn(false);
           setTimeout(function () {
             if(urlParams.has("redirect")){
               window.location.href = "./login.html?redirect=" + urlParams.get("redirect");
