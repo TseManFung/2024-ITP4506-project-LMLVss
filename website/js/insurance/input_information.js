@@ -7,6 +7,24 @@ $(document).ready(() => {
     e.preventDefault();
   })
 
+  urlParam = new URLSearchParams(window.location.search);
+  
+
+  if (urlParam.has("price")) {
+    price = urlParam.get("price");
+    $("#openPayment").attr("disabled", false);
+    $("#price-text").text(price);
+    $("#noNeedPayment").hide();
+    $("input").attr("disabled", true);
+    $("select").attr("disabled", true);
+    $("textarea").attr("disabled", true);
+    $(".step button").attr("disabled", true);
+    $("#step-5 button").attr("disabled", false);
+    $("#step-6 input").attr("disabled", false);
+    $("#step-label-5").click();
+  }else{
+    $("#payment").hide();
+  }
 
 
   const dropdownID = "dropdownID";
@@ -175,7 +193,7 @@ $(document).ready(() => {
   });
   $("#openPayment").click(function () {
     var popup = window.open(
-      "../customer/payment.html?price=123",
+      "../customer/payment.html?price="+price,
       "Payment",
       "width=720,height=1280"
     );
