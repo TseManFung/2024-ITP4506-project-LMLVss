@@ -83,10 +83,10 @@ span {
 .flip-card-back {
   color: white;
   transform: rotateX(180deg);
-}
-
-button {
-  font-size: 6rem !important;
+  & button{
+    height: 100%;
+    font-size: 6rem !important;
+  }
 }
 
 button {
@@ -133,4 +133,10 @@ button:hover {
 }
 button:hover::before {
   box-shadow: inset 0 0 0 10em black;
+}
+#btn-compare{
+  width: fit-content;
+}
+#btn-compare::before{
+  left: 0px;
 }
