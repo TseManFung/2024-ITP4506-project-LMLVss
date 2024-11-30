@@ -20,4 +20,10 @@ $(document).ready(function () {
   $(".btn-success").click(function () {
     window.location.href = "../customer/payment.html?price=12345";
   });
+  $(".btn-info").click(function () {
+    readJsonFile("/website/whatsapp.json", function (data) {
+      const message = String.format("Hello, I am {0} {1} and I want to make a claim\n(application:ABC123456, user:147258369)", "Sam", "Yau");
+      window.location.href= String.format(data.link, data.phone, message);
+  });
+  });
 });
