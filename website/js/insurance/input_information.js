@@ -166,6 +166,7 @@ $(document).ready(() => {
     }
     //clear file input
     fileInput.removeClass("image-dropping");
+    fileInput.val("");
     liNum++;
   }
   fileInput.bind("dragover", function () {

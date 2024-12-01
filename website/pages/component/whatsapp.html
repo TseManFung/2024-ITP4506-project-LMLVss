@@ -14,7 +14,7 @@
     }
 </script>
 
-<a aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp"
+<a id="whatsappBtn" aria-label="Chat on WhatsApp" href="https://wa.me/"><img alt="Chat on WhatsApp"
          src="/website/images/ChatOnWhatsAppButton/WhatsAppButtonGreenSmall.png" />
 </a>
 
@@ -22,7 +22,7 @@
     $(document).ready(function () {
         readJsonFile("/website/whatsapp.json", function (data) {
             const message = String.format(data.text, "Sam", "Yau");
-            $("a").attr("href", String.format(data.link, data.phone, message));
+            $("#whatsappBtn").attr("href", String.format(data.link, data.phone, message));
         });
     });
 </script>
