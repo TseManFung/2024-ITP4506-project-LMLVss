@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- css-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.5.2/css/all.css"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-<body>
-
-
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2 p-2">
-                <i class="fa-regular fa-user fa-5x m-2"></i>
-                <h3 class="m-1">Sam Yau</h3>
-                <p class="m-1"><u>Sam@vtc.stu.edu.hk</u></p>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="Profile" onclick="switchCard(this)"> Personal Information</div>
-                    </li>
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="Login" onclick="switchCard(this)"> Sign-In and Security</div>
-                    </li>
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="Order" onclick="switchCard(this)"> Order List</div>
-                    </li>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2 p-2">
+          <i class="fa-regular fa-user fa-5x m-2"></i>
+          <h3 class="m-1">Sam Yau</h3>
+          <p class="m-1"><u>Sam@vtc.stu.edu.hk</u></p>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="Profile" onclick="switchCard(this)">
+                Personal Information
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="Login" onclick="switchCard(this)">
+                Sign-In and Security
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="Order" onclick="switchCard(this)">
+                Order List
+              </div>
+            </li>
 
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="a3" onclick="switchCard(this)"> Payment</div>
-                    </li>
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="a4" onclick="switchCard(this)"> Family Sharing</div>
-                    </li>
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="a5" onclick="switchCard(this)"> Devices</div>
-                    </li>
-                    <li class="nav-item m-1">
-                        <div class="switchPanel" id="a6" onclick="switchCard(this)">Privacy</div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class=" col-sm-8 p-3 bg-white">
-                <div class="test1">
-                </div>
-            </div>
-
-            <div class="col-sm-1">
-            </div>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="a3" onclick="switchCard(this)">
+                Payment
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="a4" onclick="switchCard(this)">
+                Family Sharing
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="a5" onclick="switchCard(this)">
+                Devices
+              </div>
+            </li>
+            <li class="nav-item m-1">
+              <div class="switchPanel" id="a6" onclick="switchCard(this)">
+                Privacy
+              </div>
+            </li>
+          </ul>
         </div>
+
+        <div class="col-sm-8 p-3 bg-white">
+          <div class="test1"></div>
+        </div>
+
+        <div class="col-sm-1"></div>
+      </div>
     </div>
 
     <!-- Ensure bootstrap.bundle.min.js is loaded after jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-        // Function to load content dynamically based on clicked card
-        switchCard = (e) => {
-            let id = e.id;
-            let path = "/website/pages/component/UpdateInfoBody-" + id + ".html";
-            
-            // Using $.get() to load the HTML and then dynamically execute JavaScript
-            $.get(path, function (data) {
-                $(".test1").html(data); // Inject the loaded content
-                
-                // Execute any scripts inside the loaded content
-                const scripts = $(".test1").find("script");
-                scripts.each(function () {
-                    const script = document.createElement("script");
-                    script.type = "text/javascript";
-                    if (this.src) {
-                        script.src = this.src;
-                    } else {
-                        script.text = this.innerHTML;
-                    }
-                    document.body.appendChild(script);
-                });
-            });
-        };
+      // Function to load content dynamically based on clicked card
+      switchCard = (e) => {
+        let id = e.id;
+        let path = "/website/pages/component/UpdateInfoBody-" + id + ".html";
 
-        // Automatically load the first card on page load
-        $(document).ready(function () {
-            switchCard(document.getElementById("Profile"));
+        // Using $.get() to load the HTML and then dynamically execute JavaScript
+        $.get(path, function (data) {
+          $(".test1").html(data); // Inject the loaded content
+
+          // Execute any scripts inside the loaded content
+          const scripts = $(".test1").find("script");
+          scripts.each(function () {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            if (this.src) {
+              script.src = this.src;
+            } else {
+              script.text = this.innerHTML;
+            }
+            document.body.appendChild(script);
+          });
         });
+      };
+
+      // Automatically load the first card on page load
+      $(document).ready(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("card")) {
+          card = urlParams.get("card");
+          let path =
+            "/website/pages/component/UpdateInfoBody-" + card + ".html";
+
+          // Using $.get() to load the HTML and then dynamically execute JavaScript
+          $.get(path, function (data) {
+            $(".test1").html(data); // Inject the loaded content
+
+            // Execute any scripts inside the loaded content
+            const scripts = $(".test1").find("script");
+            scripts.each(function () {
+              const script = document.createElement("script");
+              script.type = "text/javascript";
+              if (this.src) {
+                script.src = this.src;
+              } else {
+                script.text = this.innerHTML;
+              }
+              document.body.appendChild(script);
+            });
+          });
+        } else {
+          switchCard(document.getElementById("Profile"));
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

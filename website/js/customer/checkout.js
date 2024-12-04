@@ -185,7 +185,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('confirmationCheckboxtext').classList.add('is-invalid');
             } else {
                 // If confirmed, redirect to Google
-                window.location.href = "https://www.google.com";  // Jump to Google when finish
+                //window.location.href = "https://www.google.com";  // Jump to Google when finish
+                modalSetTitle("Order");
+                modalSetBody("Order Success");
+                modalDisableStatic();
+                modalSetCloseBtn(false);
+                modalSetSecondaryBtn(false)
+                modalSetPrimaryBtn(true,"OK",function () {
+                    window.location.href = "/website/pages/customer/UpdateInforPage.html?card=Order"
+                })
+                showModal()
             }
         }
     });
