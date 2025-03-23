@@ -1,1 +1,1 @@
-# 2024-ITP4506-project-LMLVss
+# read doc/doc.docx
